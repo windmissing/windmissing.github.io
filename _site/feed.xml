@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Dec 2015 21:27:14 +0800</pubDate>
-    <lastBuildDate>Sun, 13 Dec 2015 21:27:14 +0800</lastBuildDate>
+    <pubDate>Sun, 13 Dec 2015 21:54:23 +0800</pubDate>
+    <lastBuildDate>Sun, 13 Dec 2015 21:54:23 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -154,8 +154,8 @@ https://code.csdn.net/mishifangxiangdefeng/exerciseforalgorithmsecond/tree/maste
 https://code.csdn.net/mishifangxiangdefeng/exerciseforalgorithmsecond/tree/master/tst/chapter9/Exercise9_1_1Test.cpp&lt;/p&gt;
 </description>
         <pubDate>Sun, 13 Dec 2015 20:00:30 +0800</pubDate>
-        <link>http://yourdomain.com/algorithm/2015/12/13/9.1-1-%E6%B1%82%E7%AC%AC%E4%BA%8C%E5%B0%8F%E5%85%83%E7%B4%A0.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/algorithm/2015/12/13/9.1-1-%E6%B1%82%E7%AC%AC%E4%BA%8C%E5%B0%8F%E5%85%83%E7%B4%A0.html</guid>
+        <link>http://yourdomain.com/algorithm/2015/12/13/9.1-1-second_smallest_element.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/algorithm/2015/12/13/9.1-1-second_smallest_element.html</guid>
         
         
         <category>algorithm</category>
