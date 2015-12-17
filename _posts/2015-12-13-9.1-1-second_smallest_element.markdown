@@ -17,26 +17,23 @@ categories: algorithm
 第二次和扫描过程中，不断记录和更新当前情况下的第二小元素。
 伪代码如下：
 
-```
-Int min = array[0], minId = 0;
-FOR i in [1, n), i++
-DO
-	IF (array[i] < min)
-	DO
-		Min = array[i];
-		minId = i;
-	DONE 
-DONE
-Int secId = ( minId = 0 ? 1 : 0 ), sec = array[secId];
-FOR i in [secId+1, n), i++
-DO
-	IF (i = minId) CONTINUE
-	IF ( array[i] < sec )
-	DO
-		Sec = array[i];
-		secId = i;
-	DONE
-DONE
+```python
+def findSecondSmaller( array ) :
+    min, minId = array[0], 0
+    for i in range( 1, len(array) ) :
+        if array[i] < min :
+            min, minId = array[i], i
+    if minId == 0 :
+        sec, secId = array[1], 1
+    else :
+        sec, secId = array[0], 0
+    for i in range( 0, len(array) ) :
+        if i != minId and array[i] < sec :
+            sec, secId = array[i], i
+    return sec
+
+array = [12, 34, 56]
+print findSecondSmaller
 ```
 
 三、常规方法的比较次数
