@@ -155,7 +155,6 @@ DONE
 =====
 
 产品代码
-https://code.csdn.net/mishifangxiangdefeng/exerciseforalgorithmsecond/tree/master/src/chapter9/Exercise9_1_1.cpp
+https://github.com/windmissing/exerciseForAlgorithmSecond/blob/master/src/chapter9/Exercise9_1_1.cpp
 测试代码
-https://code.csdn.net/mishifangxiangdefeng/exerciseforalgorithmsecond/tree/master/tst/chapter9/Exercise9_1_1Test.cpp
-
+https://github.com/windmissing/exerciseForAlgorithmSecond/blob/master/tst/chapter9/Exercise9_1_1Test.cpp
