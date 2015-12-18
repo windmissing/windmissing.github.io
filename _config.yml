@@ -1,22 +1,50 @@
-
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: windmissing 
-email: yina.he@nokia.com 
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://windmissing.github.io" # the base hostname & protocol for your site
-twitter_username: windmissing
-github_username:  windmissing
+title: "幸福在路上"
+url: "//windmissing.github.io"
+#highlighter: pygments
+gems: [jekyll-paginate]
+paginate: 5
+author:
+    name: windmissing
+    github:
+    email:
+    gitcafe:
+    twitter:
+    facebook:
+    googleplus:
+    weibo:
+atom_path: /atom.xml
+rss_path: /rss.xml
 
 # Build settings
-markdown: rdiscount 
+markdown: redcarpet
+redcarpet:
+    extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
+permalink: /:categories/:year-:month/:title.html
+
+assets_path: /assets
+sass:
+    sass_dir: assets/_sass
+    style: :compressed
+
+# comment
+comments:
+    duoshuo:
+        name:                               # short name
+        rcomments:
+            num: 10
+            avatar: 0
+            time: 0
+            title: 0
+            admin: 0
+            length: 26
+
+# tinysou.com
+search:
+    tinysou:
+        engineKey: 
+
+# 网站统计
+analytics:
+    baidu:
+        siteid:                             # 百度统计 

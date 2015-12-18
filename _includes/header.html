@@ -1,27 +1,38 @@
-<header class="site-header">
+<!--[if lt IE 9]>
+<div class="alert alert-warning">
+  <p>Your Internet Explorer is not supported. Please upgrade your Internet Explorer to version 9+, or use latest <a href="http://www.google.com/chrome/" target="_blank" class="alert-link">Google chrome</a>、<a href="http://www.mozilla.org/firefox/" target="_blank" class="alert-link">Mozilla Firefox</a>.</p>
+  <p>If you are using IE 9 or later, make sure you <a href="http://windows.microsoft.com/en-us/internet-explorer/use-compatibility-view#ie=ie-8" target="_blank" class="alert-link">turn off "Compatibility view"</a>.</p>
+</div>
+<![endif]-->
+<header class="header">
+  <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+  <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <div class="title"><a title="{{ site.title }}" href="/">{{ site.title }}</a></div>
+  <ul class="nav navbar-nav collapse navbar-collapse bs-navbar-collapse navbar-right">
+    <li><a href="{{ '/archive.html' }}" title="Archive"><span class='fa fa-archive fa-2x'></span></a></li>
+    <li><a href="{{ '/categories.html' }}" title="Categories" rel="nofollow"><span class='fa fa-navicon fa-2x'></span></a></li>
+    <li><a href="{{ '/tags.html' }}" title="Tags" rel="nofollow"><span class='fa fa-tags fa-2x'></span></a></li>
+    <li><a href="{{ '/about.html' }}" title="About"><span class='fa fa-user fa-2x'></span></a></li>
+    {% if site.author.github %}
+    <li><a href="https://github.com/{{ site.author.github }}" target="_blank" title="Github" rel="nofollow"><span class='fa fa-github fa-2x'></span></a></li>
+    {% endif %}
+    {% if site.author.googleplus %}
+    <li><a href="https://plus.google.com/{{ site.author.googleplus }}" target="_blank" title="Google+" rel="nofollow"><span class="fa fa-google-plus fa-2x"></span></a></li>
+    {% endif %}
+    {% if site.author.twitter %}
+    <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" title="twitter" rel="nofollow"><span class="fa fa-twitter fa-2x"></span></a></li>
+    {% endif %}
+    {% if site.author.facebook %}
+    <li><a href="http://www.facebook.com/{{ site.author.facebook }}" target="_blank" title="facebook" rel="nofollow"><span class="fa fa-facebook fa-2x"></span></a></li>
+    {% endif %}
+    {% if site.author.weibo %}
+    <li><a href="http://weibo.com/{{ site.author.weibo }}" target="_blank" title="Weibo" rel="nofollow"><span class="fa fa-weibo fa-2x"></span></a></li>
+    {% endif %}
 
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-
-  </div>
-
+    <li><a href="{{ '/rss.xml' }}" target="_blank" title="RSS" rel="nofollow"><span class='fa fa-rss fa-2x'></span></a></li>
+  </ul>
 </header>

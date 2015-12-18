@@ -17,7 +17,7 @@ categories: algorithm
 第二次和扫描过程中，不断记录和更新当前情况下的第二小元素。
 伪代码如下：
 
-```
+```python
 Int min = array[0], minId = 0;
 FOR i in [1, n), i++
 DO
