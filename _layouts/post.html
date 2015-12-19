@@ -1,15 +1,22 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="col-md-12">
+  <h2 class="title"> {{ page.title }} <time class="small">{{ page.date | date: "%Y.%m.%d" }}</time></h2>
+  <div id="code" class="qrcode visible-lg"></div>
+  {{ content }}
+  <ul class="pager">
+    {% if page.previous %}
+    <li class="previous"><a  href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Prev</a></li>
+    {% else %}
+    <li class="previous disabled"><a href="#">&larr; Prev</a></li>
+    {% endif %}
+    {% if page.next %}
+    <li class="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+    {% else %}
+    <li class="next disabled"><a href="#">Next &rarr;</a></li>
+    {% endif %}
+  </ul>
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-</article>
+{% include comments.html %}
+</div>

@@ -4,17 +4,68 @@
   {% include head.html %}
 
   <body>
+    <div class="container">
+      {% include header.html %}
 
-    {% include header.html %}
+      <article class="wrapper">
+        <div class="row clearfix">
+          {{ content }}
+        </div>
+      </article>
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+      {% include footer.html %}
     </div>
 
-    {% include footer.html %}
+    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/jquery.min.js"></script>
+    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/bootstrap.min.js"></script>
+    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/webcore.js"></script>
+    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/jquery.qrcode.min.js"></script>
 
+    <script>
+      $("#code").qrcode({
+        width: 150,
+        height: 150,
+        text: "http:{{ site.url }}{{ page.url }}"
+      });
+    </script>
+
+    {% if site.search.tinysou.engineKey %}
+    <!-- tinysou Begin -->
+    <script>
+    var option = {
+      engineKey: '{{ site.search.tinysou.engineKey }}',
+    };
+    (function(w,d,t,u,n,s,e){
+      s = d.createElement(t);
+      s.src = u;
+      s.async = 1;
+      w[n] = function(r){
+      w[n].opts = r;
+    };
+    e = d.getElementsByTagName(t)[0];
+    e.parentNode.insertBefore(s, e);
+    })(window,document,'script','//tinysou-cdn.b0.upaiyun.com/ts.js','_ts');
+    _ts(option);
+    </script>
+    <!-- tinysou End -->
+    {% endif %}
+
+    {% include baidu-analytics.html %}
+
+    {% if site.comments.duoshuo.name %}
+    <!-- duoshuo Begin -->
+    <script>
+      var duoshuoQuery = {short_name:"{{ site.comments.duoshuo.name }}"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!-- duoshuo End -->
+    {% endif %}
   </body>
-
 </html>

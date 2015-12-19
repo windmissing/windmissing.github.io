@@ -1,15 +1,11 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: "About"
+description: ""
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+#### ChangeLog
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+- 2015年11月:    放弃CSDN，转为github，模板改自Havee
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+{% include comments.html %}
