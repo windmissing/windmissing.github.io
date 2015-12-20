@@ -28,21 +28,21 @@ tags: [算法, 算法导论]
 
 ```python
 def findSmallest( array ) :
-    min, minId = array[0], 0
-    for i in range( 1, len(array) ) :
-        if array[i] < min :
-            min, minId = array[i], i
-    return minId
+    smallest, smallestId = array[0], 0
+    array = array[ 1 : ]
+    for index, element in enumerate ( array ) :
+        if element < smallest :
+            smallest, smallestId = element, index
+    return smallestId
 
-def findSmaller( array, minId ) :
-    if minId == 0 :
-        sec, secId = array[1], 1
-    else :
-        sec, secId = array[0], 0
-    for i in range( 0, len(array) ) :
-        if i != minId and array[i] < sec :
-            sec, secId = array[i], i
-    return sec
+def findSecondSmaller( array, minId ) :
+    array = array[ : minId ] + array[ minId+1 : ]
+    array = array[ 1 : ]
+    secondSmaller = array[0]
+    for element in array :
+        if element < secondSmaller :
+            secondSmaller = element
+    return secondSmaller
 
 def solution ( array ) :
     smallestId = findSmallest( array )
@@ -69,7 +69,7 @@ def compare(a, b) :
     compareCnt += 1
     return a < b
 ```
-同时将```findSmallest```中的```array[i] < min```替换为```compare(array[i], min)```，将```findSmaller```中的```array[i] < sec```替换为```compare(array[i], sec)```。并在调用```sulution```结束之后打印```compareCnt```。
+同时将```findSmallest```中的```element < smallest```替换为```compare(element, small)```，将```findSmaller```中的```array[i] < sec```替换为```compare(array[i], sec)```。并在调用```sulution```结束之后打印```compareCnt```。
 
 #### 三、方法改进一
 
@@ -134,32 +134,29 @@ c, f, g有可能是第二小元素，e是最小元素
 
 第一次扫描的比较没有改变，只是每次比较的过程记录下来，以便第二次扫描的时候知道某个元素曾经和谁做过比较。
 
+```python
+def findSmallestAndCollectInformation( array ) :
+    comparePath = [ [] for i in range(len(array))]
+    smallest, smallestId = array[0], 0
+    array = array[ 1 : ]
+    for index, element in enumerate ( array ) :
+        if compare(element , smallest) :
+            comparePath[index].append(smallest)
+            smallest, smalleId = element, i
+        else :
+            comparePath[smallestId].append(element)
+    return comparePath[smallestId]
 ```
-Int min = array[0], minId = 0;
-FOR i in [1, n), i++
-DO
-	IF (array[i] < min)
-	DO
-		Min = array[i];
-		minId = i;
-		QUEUE[i].PUSH(min);
-	ELSE
-		QUEUE[minId].push(array[i]);
-	DONE 
-DONE
-```
-
 第二次扫描时，仅取出最小元素所对应的队列元素做比较
 
-```
-Int secId = QUEUE[minId].ELEMET(0)
-FOR i in [1, QUEUE[minId].size), i++
-DO
-	IF (QUEUE[minId].ELEMET(i) < sec )
-	DO
-		Sec = QUEUE[minId].ELEMET(i);
-	DONE
-DONE
+```python
+def findSecondSmaller( comparePath ) :
+    secondSmaller = comparePath[0]
+    comparePath = comparePath [ 1 : ]
+    for element in comparePath :
+        if compare(element , secondSmaller) :
+            secondSmaller = element
+    return secondSmaller
 ```
 
 ##### 方法改进一的比较次数
@@ -181,20 +178,56 @@ DONE
 #### 四、方法改进二
 
 虽然方法改进一相比于常规方法是有了改善，但最多比较次数仍然需要2n-3次，未达到题目所要求。这次我们方找最小元素的过程入手。
+
 上文已经说过，求最元素的过程到少要经过n-1次比较，这一点是难以改变的。但我们仍可以通过调整第一次遍历方式，使留给第二次遍历更多有用的信息。
+
 ##### 二叉树的平衡化
+
 根据上文可知，方法改进一的比较次数主要取决于第一次扫描过程中与最小元素直接比较的元素的个数。
 
 由于第一次扫描是从前往依次扫描的，如果最小元素刚好是第一个元素，那么它后面的每一个元素都要与它一一比较，就是最坏情况。
 
 要想减少最坏情况的比较次数，就是不管最小元素出现在什么位置，与它直接比较的元素都不能太多，也就是尽量*让每个元素与其它元素的比较次数平均化*。仍然以上文的图为例：
 ![这里写图片描述](http://img.blog.csdn.net/20151112103655088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-方法改进一的第一次遍历可以画成这一样的图，数组中的每一元素是这个二叉树的叶子结点。假如某一个元素是最小元素，那么它的队列的元素即该叶子结点的高度。只要将树平均化，如下图所示，保证每一个叶子的高度都不会太高，那么每个元素对应的队列都就不会太大。
+方法改进一的第一次遍历可以画成这一样的图，数组中的每一元素是这个二叉树的叶子结点。假如某一个元素是最小元素，那么它的队列的元素即该叶子结点的高度。
+
+这棵二叉树明显不平衡，左重右轻的感觉。只要将树平均化，如下图所示，保证每一个叶子的高度都不会太高，那么每个元素对应的队列都就不会太大。
+
+注意，这里所说的二叉树的平衡化，与平衡二叉树没什么关系，只是让二叉树的结点分布均匀，降低树的高度。
  ![这里写图片描述](http://img.blog.csdn.net/20151112103711141?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+这种二叉树的比较策略不再是从头开始一个一个地比较。而地每两个一组进行比较，胜出者进入一轮，再两个一组的比较，若某一轮中元素个数为奇数，则有一个元素轮空，直接晋级。直到剩下最后一个元素。
+
+这种比较规则类似于比赛中的淘汰制。
+
+当然，比较的同时，胜者仍然要记录它跟谁比较过。
 
 ##### 方法改进二的伪代码
 
+为了代码实现方便，这里并不是按照图中所画的A和B比较，C和D比较，而是首尾比较，第一个和最后一个，第二个和倒数第二个……
 
+```python
+def findSmallestAndCollectInformation( array ) :
+    indexList = [ i for i in range(len(array)) ]
+    comparePath = [ [] for i in range(len(array)) ]
+    while len(indexList) != 1 :
+        indexList = compareAndStore(array, indexList, comparePath)
+    return comparePath[indexList[0]]
+
+def compareAndStore(array, indexList, comparePath) :
+    tempIndexList = []
+    indexCount = len( indexList )
+    for i in range( int((indexCount)/2) ) :
+        f = lambda : indexCount-i-1
+        if compare ( array[indexList[i]] , array[indexList[f()]] ) :
+            comparePath[indexList[i]].append(array[indexList[f()]])
+            tempIndexList.append(indexList[i])
+        else :
+            comparePath[indexList[f()]].append(array[indexList[i]])
+            tempIndexList.append(indexList[f()])
+    if indexCount % 2 != 0 :
+        tempIndexList.append(indexList[int(indexCount/2)])
+    return tempIndexList
+```
 ##### 方法改进二的比较次数
 
 对于第一次遍历，比较次数仍为n-1。
@@ -209,7 +242,7 @@ DONE
 
 在优化过程中，首先通过第一次遍历得到的信息优化第二遍历的过程，然后通过修改第一次遍历的顺序以得到更多的可用信息。
 
-本题主要难点在于将比较过得转换成树来思考。有一点tips，题目中提到了ceil(lgn)，类似于这样的计算公式通常与树有关，进一步说，通过与平衡二叉树的高度有关。一开始就往这方面去想，就比较容易了。
+本题主要难点在于将比较过得转换成树来思考。有一点tips，题目中提到了ceil(lgn)，类似于这样的计算公式通常与树有关，进一步说，通过与完全二叉树的高度有关。一开始就往这方面去想，就比较容易了。
 
 #### 六、代码
 
