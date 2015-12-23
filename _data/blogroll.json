@@ -7,4 +7,12 @@
         "title": "Jekyll",
         "url": "//jekyllrb.com"
     },
+    {
+        "title": "算法导论代码C++版",
+        "url": "https://github.com/windmissing/exerciseForAlgorithmSecond"
+    },
+    {
+        "title": "算法导论代码python版",
+        "url": "https://github.com/windmissing/exerciseForAlgorithmPython"
+    },
 ]
