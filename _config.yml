@@ -30,7 +30,7 @@ sass:
 # comment
 comments:
     duoshuo:
-        name:                               # short name
+        name: windmissing                              # short name
         rcomments:
             num: 10
             avatar: 0
