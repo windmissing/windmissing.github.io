@@ -6,10 +6,10 @@ gems: [jekyll-paginate]
 paginate: 5
 author:
     name: windmissing
-    github:
-    email:
+    github: windmissing
+    email: windmissinghe@gmail.com
     gitcafe:
-    twitter:
+    twitter: WindmissingHe
     facebook:
     googleplus:
     weibo:
