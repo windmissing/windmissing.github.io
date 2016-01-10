@@ -24,7 +24,8 @@ ELK系统收到推送过来的日志后，首先由logstash解析日志中的字
 
 #### 一、安装工具
 ##### 1.安装elasticsearch
-```shell
+
+```
 wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.1.tar.gz
 tar -xvzf elasticsearch-1.7.1.tar.gz
 cp -a elasticsearch-1.7.1 /usr/local
@@ -32,7 +33,8 @@ cd /usr/local
 ln –s elasticsearch-1.7.1 elasticsearch
 ```
 ##### 2.安装logstash
-```shell
+
+```
 wget https://download.elastic.co/logstash/logstash/logstash-1.5.4.tar.gz
 tar –xvzf logstash-1.5.4.tar.gz
 cp –a logstash-1.5.4 /usr/local
@@ -40,7 +42,8 @@ cd /usr/local
 ln –s logstash-1.5.4 logstash
 ```
 ##### 3.安装kibana
-```shell
+
+```
 wget https://download.elastic.co/kibana/kibana/kibana-4.1.2-linux-x64.tar.gz
 tar –xvzf kibana-4.1.2-linux-x64.tar.gz
 cp –a kibana-4.1.2-linux-x64 /usr/local
@@ -48,6 +51,7 @@ cd /usr/local
 ln –s kibana-4.1.2-linux-x64 kibana
 ```
 #### 二、配置logstash
+
 ```
 cd /usr/local/logstash
 mkdir etc
