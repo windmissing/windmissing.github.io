@@ -62,6 +62,8 @@ grok提供了哪些SYNTAX？可以查看文件grok-patterns，它默认放在路
 
  - 在dir下创建一个文件，文件名随意
 
+ - 将dir加入grok路径： `patterns_dir => "./dir"`
+
  - 将想要增加的SYNTAX写入： `SYNTAX_NAME regexp`
 
- - 使用方法和使用默认SYNTAX相同
+ - 使用方法和使用默认SYNTAX相同：`%{SYNTAX_NAME:SEMANTIC}`

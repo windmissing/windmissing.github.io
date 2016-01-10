@@ -118,5 +118,14 @@ kibana也不需要配置，直接启动
 打开127.0.01:5601即可看到Kibana的页面，选择默认配置，进入，/tmp/*.log中的信息在kibana中显示，可知kibana搭建成功。
 
 
-#### 五、参考文章
+#### 五、遇到的问题
+1.打开127.0.0.1：9200或127.0.0.1:5601时，提示网页无法打开，但kibana与elasticsearch服务器确实已经启动。
+
+解决方法：代理关掉
+
+2./tmp/*.log是存在的，但是kibana上提示没有数据，logstash的stdout也看不到数据
+
+解决方法：logstash只读取最近一段时间的日志，把日志文件时间更新一下就可以解决
+
+#### 六、参考文章
 http://my.oschina.net/lenglingx/blog/504883?fromerr=a2z8OWmY
