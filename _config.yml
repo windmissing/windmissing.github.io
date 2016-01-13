@@ -1,7 +1,7 @@
 # Site settings
 title: "幸福在路上"
 url: "//windmissing.github.io"
-#highlighter: pygments
+highlighter: pygments
 gems: [jekyll-paginate]
 paginate: 5
 author:
