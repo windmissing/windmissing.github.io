@@ -46,7 +46,7 @@ tags: [linux, memory leak]
 
 怎么办呢？为了避免节外生枝，我这里使用了最简单但是有点笨的方法——数组。
 
-```
+```c++
 struct memory_record
 {
     void * addr;
@@ -60,7 +60,7 @@ struct memory_record
 
 gcc给我们提相应的函数，按照要求调用就行。
 
-```
+```c++
 char* stack[20] = {0};
 mc[i].depth = backtrace(reinterpret_cast<void ** >(stack), sizeof(stack)/sizeof(stack[0])); 
 if (mc[i].depth){ 
