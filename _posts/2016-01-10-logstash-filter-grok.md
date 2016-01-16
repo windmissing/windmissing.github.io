@@ -5,7 +5,7 @@ category: ELK
 tags: [linux, ELK, grok]
 ---
 
-在<a href="/elk/2016-01/set-up-ELK-locally.html">《本地搭建ELK系统》</a>中，在本地搭建了一个非常简单的ELK系统。其中logstash从本地日志文件中读取信息并交给elasticsearch。
+在[《本地搭建ELK系统》](/elk/2016-01/set-up-ELK-locally.html)中，在本地搭建了一个非常简单的ELK系统。其中logstash从本地日志文件中读取信息并交给elasticsearch。
 
 然而直接把原始未加工的日志交给elasticsearch没有什么意义。
 
