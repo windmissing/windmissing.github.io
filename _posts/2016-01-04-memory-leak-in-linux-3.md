@@ -5,7 +5,7 @@ category: linux
 tags: [linux, memory leak]
 ---
 
-[《linux中内存泄漏的检测（二）定制化的malloc/free》](memory-leak-in-linux-2.html)中的__wrap方法只解决了C的问题，这一节介绍怎么让C++中的new/delete也能方便地插入计数代码。
+[《linux中内存泄漏的检测（二）定制化的malloc/free》](/linux/2015-12/memory-leak-in-linux-2.html)中的__wrap方法只解决了C的问题，这一节介绍怎么让C++中的new/delete也能方便地插入计数代码。
 
 #### wrap方法尝试
 

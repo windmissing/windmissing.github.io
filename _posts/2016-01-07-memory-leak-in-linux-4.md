@@ -5,7 +5,7 @@ category: linux
 tags: [linux, memory leak]
 ---
 
-[《linux中内存泄漏的检测（三）定制化的new/delete》](memory-leak-in-linux-3.html)讲到，利用C++的函数重载的特性，使C++的代码，也能方便地为new/delete加上用于检测内存泄漏的统计代码。然而，也因此引入的新的问题。
+[《linux中内存泄漏的检测（三）定制化的new/delete》](/linux/2015-12/memory-leak-in-linux-3.html)讲到，利用C++的函数重载的特性，使C++的代码，也能方便地为new/delete加上用于检测内存泄漏的统计代码。然而，也因此引入的新的问题。
 
 目前的统计方式仅仅统计申请/释放内存的次数，并没有统计每次申请/释放内存的大小。
 这种方法对于C来说是够用了，因为在C中申请和释放的大小是相同的，而在C++中就不一定了。
