@@ -23,7 +23,9 @@ LEFT(i)
 RIGHT(i)
     return 2i+1
 ```
-    
+
+<!-- more -->
+
 #### 2.最大/小堆(max-heap/min-heap)
 
 从二叉树的角度看，对于所有非root结点，满足`node->parent ≥ node`/`node->parent ≤ node`
