@@ -7,7 +7,7 @@ tags: [valgrind, memcheck]
 
 关于valgrind memcheck请阅读[《valgrind memcheck使用方法及效果》](/linux/2016-02/valgrind-memcheck.html)
 
-在这里，我列举了四种使用未初始化内存的情况
+在这里，我列举了三种使用未初始化内存的情况
 
 #### 使用未初始化的栈空间
 
@@ -155,3 +155,4 @@ int main()
 1.以类似于memcpy这样的方式访问未初始化的内存不会被检测出来
 
 2.用未初始化的内存来初始化另一个内存，不会被认为是初始化
+
