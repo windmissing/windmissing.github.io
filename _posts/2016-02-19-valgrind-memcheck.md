@@ -75,6 +75,7 @@ valgrind --tool=memcheck ls -l
 ##### 1.valgrind memcheck是什么
 
 memcheck是valgrind tool的一种，是一个细粒度的的内存检查器。它可以检测以下问题：
+
 1）使用未初始化的内存
 
 2）读/写已经被释放的内存
@@ -135,269 +136,23 @@ valgrind  program args-pro
 
 [《valgrind memcheck 使用未初始化的内存》](/linux/2016-02/valgrind-memcheck-uninitialized.html)
 
-##### 3.读/写已经被释放的内存
+##### 2.读/写已经被释放的内存
 
-###### 测试代码
+[《valgrind memcheck 读/写已经被释放的内存》](/linux/2016-02/valgrind-memcheck-deleted.html)
 
-```c++
-#include <iostream>
-using namespace std;
+##### 3.读/写内存越界
 
-int main()
-{
-    int *p = new int;
-    delete p;
+[《valgrind memcheck 读/写内存越界》](/linux/2016-02/valgrind-memcheck-outrange.html)
 
-    *p = 3;
-    return 0;
-}
-```
-
-###### 编译及运行
-
-```
-g++ -g -o deleted val-deleted.cpp
-valgrind /home/vagrant/git_hub/windmissing.github.io/_posts/code/deleted 
-```
-
-###### 检测结果
-
-```
-==11588== Invalid write of size 4
-==11588==    at 0x400796: main (val-deleted.cpp:9)
-==11588==  Address 0x5a15040 is 0 bytes inside a block of size 4 free'd
-==11588==    at 0x4C2B131: operator delete(void*) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11588==    by 0x400791: main (val-deleted.cpp:7)
-```
-###### 检测结果解读
-
-（1）“读/写已经被释放的内存”可以被检测出来
-
-（2）打印的信息只会提示“释放内存”的代码，不会提示“使用释放的内存”的代码
-
-##### 4.读/写内存越界
-
-###### 测试代码
-
-这里设计了三种访问越界的场景，分别测试访问栈内数组越界、访问堆中数组越界、函数传参导致数组长度退化三种情况
-
-```c++
-#include <iostream>
-using namespace std;
-#include "string.h"
-
-void test1()
-{
-    int s[5] = {1, 2, 3, 4, 5};
-    cout<<s[5]<<endl;
-}
-
-void test2()
-{
-    int *s = new int[5];
-    memset(s, 0, sizeof(s));
-    cout<<s[5]<<endl;
-    delete []s;
-}
-
-void print(int *s, int id)
-{
-    cout<<s[id]<<endl;
-}
-
-void test3()
-{
-    int s[5] = {1, 2, 3, 4, 5};
-    print(s, 5);
-}
-int main()
-{
-    test1();
-    test2();
-    test3();
-    return 0;
-}
-```
-
-###### 编译及运行
-
-```
-g++ -o outrange val-outrange.cpp 
-valgrind /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange
-```
-###### 检测结果
-
-关于test1
-
-```
-==24777== Use of uninitialised value of size 8
-
-...
-
-==24777==    by 0x400959: test1() (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-==24777==    by 0x400A53: main (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-```
-
-关于test2
-
-```
-==24777== Invalid read of size 4
-==24777==    at 0x40099D: test2() (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-==24777==    by 0x400A58: main (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-==24777==  Address 0x5a15054 is 0 bytes after a block of size 20 alloc'd
-==24777==    at 0x4C2A7AA: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
-==24777==    by 0x40097A: test2() (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-==24777==    by 0x400A58: main (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-==24777==
-```
-
-关于test3
-
-```
-==24777== Conditional jump or move depends on uninitialised value(s)
-
-...
-
-==24777==    by 0x400A48: test3() (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-==24777==    by 0x400A5D: main (in /home/vagrant/git_hub/windmissing.github.io/_posts/code/outrange)
-```
-
-###### 检测结果解读
-
-1.可以检测访问堆中数组越界的问题
-
-2.不能检测访问栈中数组越界的问题
-
-3.堆中数组因为参数传递而退化为指针后，不能检测出访问越界的问题
+##### 4.读/写不恰当的内存栈空间
 
 ##### 5.内存泄漏
 
-###### 测试代码
-
-```c++
-#include <iostream>
-using namespace std;
-
-void test1()
-{
-    int *p = new int;
-}
-
-void test2()
-{
-    int *p = new int;
-    char *p2 = (char *)p;
-    delete p2;
-}
-
-class father
-{
-    int *p;
-public:
-    father(){p = new int;}
-    ~father(){delete p;}
-};
-
-class son : public father
-{
-    int *p2;
-public:
-    son(){p2 = new int;}
-    ~son(){delete p2;}
-};
-
-void test3()
-{
-    father *p = new son;
-    delete p;
-};
-int main()
-{
-    test1();
-    test2();
-    test3();
-    return 0;
-}
-```
-
-###### 编译及运行
-
-```
-g++ -g -o memleak val-memleak.cpp
-valgrind --leak-check=full /home/vagrant/git_hub/windmissing.github.io/_posts/code/memleak
-```
-###### 检测结果
-
-```
-==29099== HEAP SUMMARY:
-==29099==     in use at exit: 8 bytes in 2 blocks
-==29099==   total heap usage: 5 allocs, 3 frees, 32 bytes allocated
-==29099== 
-==29099== 4 bytes in 1 blocks are definitely lost in loss record 1 of 2
-==29099==    at 0x4C2A105: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29099==    by 0x400871: test1() (val-memleak.cpp:6)
-==29099==    by 0x40090A: main (val-memleak.cpp:39)
-==29099== 
-==29099== 4 bytes in 1 blocks are definitely lost in loss record 2 of 2
-==29099==    at 0x4C2A105: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29099==    by 0x4009CE: son::son() (val-memleak.cpp:28)
-==29099==    by 0x4008C3: test3() (val-memleak.cpp:34)
-==29099==    by 0x400914: main (val-memleak.cpp:41)
-==29099== 
-==29099== LEAK SUMMARY:
-==29099==    definitely lost: 8 bytes in 2 blocks
-==29099==    indirectly lost: 0 bytes in 0 blocks
-==29099==      possibly lost: 0 bytes in 0 blocks
-==29099==    still reachable: 0 bytes in 0 blocks
-==29099==         suppressed: 0 bytes in 0 blocks
-==29099== 
-```
-
-###### 检测结果解读
-
-1.内存泄漏可以被检测出来
-
-2.检测结果会给出详细的堆栈信息及行号
+[《valgrind memcheck 内存泄漏]》(/linux/2016-02/valgrind-memcheck-memleak.html)
 
 ##### 6.使用malloc/new/new[]和free/delete/delete[]不匹配
 
-###### 测试代码
-
-```c++
-#include <iostream>
-using namespace std;
-
-void test1()
-{
-    int *p = new int[5];
-    delete p;
-}
-
-int main()
-{
-    test1();
-}
-```
-
-###### 编译及运行
-
-```
-g++ -g -o mismatch val-mismatch.cpp 
-valgrind --leak-check=full /home/vagrant/git_hub/windmissing.github.io/_posts/code/mismatch
-```
-###### 检测结果
-
-```
-==29260== Mismatched free() / delete / delete []
-==29260==    at 0x4C2B131: operator delete(void*) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29260==    by 0x400791: test1() (val-mismatch.cpp:7)
-==29260==    by 0x40079C: main (val-mismatch.cpp:12)
-==29260==  Address 0x5a15040 is 0 bytes inside a block of size 20 alloc'd
-==29260==    at 0x4C2A7AA: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29260==    by 0x400781: test1() (val-mismatch.cpp:6)
-==29260==    by 0x40079C: main (val-mismatch.cpp:12)
-```
-###### 检测结果解读
+[《valgrind memcheck 使用malloc/new/new[]和free/delete/delete[]不匹配]》(/linux/2016-02/valgrind-memcheck-mismatch.html)
 
 ##### 7.src和dst的重叠
 

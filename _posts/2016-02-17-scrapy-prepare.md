@@ -99,3 +99,7 @@ scrapy crawl read_csdn_article
 当然，什么也没有爬到，因为到目前为止还只是一个框架，没有实际的内容
 
 ![](image/scrapy-prepare-4.png)
+
+#### 五、参考链接
+
+http://scrapy-chs.readthedocs.org/zh_CN/latest/intro/tutorial.html
