@@ -245,6 +245,96 @@ yield scrapy.Request(url, callback=self.detail_page)
 with codecs.open(filename, 'w', 'utf-8') as f:
 ```
 
-#### 八、参考链接
+#### 八、附完整代码
+
+```python
+import scrapy
+import re
+from scrapy.utils.response import get_base_url
+from scrapy.utils.url import urljoin_rfc
+import pickle
+import codecs
+import json
+
+class JsonWriterPipeline(object):
+
+    def __init__(self):
+        self.file = open('items.jl', 'wb')
+
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item)) + "\n"
+        self.file.write(line)
+        return item
+
+class DmozSpider(scrapy.Spider):
+    name = "dmoz"
+#    allowed_domains = ["csdn.net"]
+    start_urls = [
+        "http://blog.csdn.net/mishifangxiangdefeng",
+    ]
+
+    def parse(self, response):
+        list_text = response.xpath('//*[@id="papelist"]/a[7]/@href').extract()
+        print list_text
+        list_count = int(list_text[0].split("/")[-1])
+        print list_count
+        for count in range(list_count+1):
+            url = "http://blog.csdn.net/mishifangxiangdefeng/article/list/" + str(count)
+#            print url
+            yield scrapy.Request(url, callback=self.article_page)
+
+
+    def article_page(self, response):
+        for url in response.xpath('//a/@href').extract():
+            base_url = get_base_url(response)
+            if re.match(".*/mishifangxiangdefeng/article/details/\d*$", url, re.U):
+                url = urljoin_rfc(base_url, url)
+                yield scrapy.Request(url, callback=self.detail_page)
+
+
+    def detail_page(self, response):
+        item = csdn_article()
+        item["url"] = response.url
+        item["title"] = response.xpath('//*[@id="article_details"]/div[1]/h1/span/a/text()').extract()[0].replace("\r\n", '').replace(' ','')
+        item["time"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[1]/text()').extract()[0]
+        item["reader"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[2]/text()').extract()[0]
+        item["comments"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[3]/text()').extract()[0]
+        item["atype"] = response.xpath('//*[@id="article_details"]/div[3]/div[2]/label/span/em/text()').extract()[0]
+        item["contents1"] = response.xpath('//*[@id="article_content"]/p/text()').extract()[0],
+#        item["contents2"] = response.xpath('//*[@id="article_content"]/div/p/text()').extract(),
+        yield item
+        filename = item["title"] + ".csdn"
+        with codecs.open(filename, 'w', 'utf-8') as f:
+             f.write(item.getString())
+
+import scrapy
+
+class csdn_article(scrapy.Item):
+    url = scrapy.Field()
+    title = scrapy.Field()
+    time = scrapy.Field()
+    reader = scrapy.Field()
+    comments = scrapy.Field()
+    atype = scrapy.Field()
+    contents1 = scrapy.Field()
+#    contents2 = scrapy.Field()
+
+    def getString(self) :
+      str = "url: " + self['url'] + "\n"
+      str += "title: " + self['title'] + '\n'
+      str += "time: " + self['time'] + '\n'
+      str += 'reader: ' + self['reader'] + '\n'
+      str += 'comments: ' + self['comments'] + '\n'
+      str += 'atype: ' + self['atype'] + '\n'
+#      print self['contents1']
+#      print self['contents2']
+#      for text in self['contents1'] :
+#        str += text + '\n'
+#      for text in self['contents2'] :
+#        str += text + '\n'
+      return str
+```
+
+#### 九、参考链接
 
 http://scrapy-chs.readthedocs.org/zh_CN/latest/intro/tutorial.html
