@@ -15,7 +15,7 @@ tags: [valgrind, memcheck]
 
 <!-- more -->
 
-#### malloc/delete或new/free
+#### 一、malloc/delete或new/free
 
 ```c++
 #include <iostream>
@@ -65,7 +65,7 @@ valgrind  ./mismatch1
 
 2.申请和释放代码的详细堆栈信息都会给出
 
-#### new/delete[]或new[]/delete
+#### 二、new/delete[]或new[]/delete
 
 ###### 测试代码
 
