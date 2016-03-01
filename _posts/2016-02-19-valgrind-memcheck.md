@@ -148,11 +148,11 @@ valgrind  program args-pro
 
 ##### 5.内存泄漏
 
-[《valgrind memcheck 内存泄漏]》(/linux/2016-02/valgrind-memcheck-memleak.html)
+[《valgrind memcheck 内存泄漏》](/linux/2016-02/valgrind-memcheck-memleak.html)
 
 ##### 6.使用malloc/new/new[]和free/delete/delete[]不匹配
 
-[《valgrind memcheck 使用malloc/new/new[]和free/delete/delete[]不匹配]》(/linux/2016-02/valgrind-memcheck-mismatch.html)
+[《valgrind memcheck 使用malloc/new/new[]和free/delete/delete[]不匹配》](/linux/2016-02/valgrind-memcheck-mismatch.html)
 
 ##### 7.src和dst的重叠
 
