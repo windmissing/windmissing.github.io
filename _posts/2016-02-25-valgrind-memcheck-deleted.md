@@ -7,7 +7,7 @@ tags: [valgrind, memcheck]
 
 关于valgrind memcheck请阅读[《valgrind memcheck使用方法及效果》](/linux/2016-02/valgrind-memcheck.html)
 
-在这里，我列举了三种读/写已经被释放的内存的情况
+在这里，我列举了两种读/写已经被释放的内存的情况
 
 - 读写已经释放的堆内存
 

@@ -146,6 +146,8 @@ valgrind  program args-pro
 
 ##### 4.读/写不恰当的内存栈空间
 
+其它几篇都有读/写不恰当内存栈空间的例子
+
 ##### 5.内存泄漏
 
 [《valgrind memcheck 内存泄漏》](/linux/2016-02/valgrind-memcheck-memleak.html)
@@ -198,6 +200,7 @@ valgrind --leak-check=full /home/vagrant/git_hub/windmissing.github.io/_posts/co
 #### 四、Valgrind的特点
 
 ##### 1.优点
+
 （1）检测对象程序在编译时无须指定特别的选项，也不需要连接特别的函数库
 
 （2）valgrind被设计成非侵入式的，它直接工作于可执行文件上，因此在检查前不需要重新编译、连接和修改你的程序。要检查一个程序很简单，只需要执行下面的命令就可以了
