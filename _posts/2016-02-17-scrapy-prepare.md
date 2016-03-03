@@ -30,11 +30,11 @@ yum install scrapy
 ```
 scrapy startproject csdn
 ```
-![](image/scrapy-prepare-1.png)
+![](/image/scrapy-prepare-1.png)
 
 ##### 2.发生了什么？
 
-![](image/scrapy-prepare-2.png)
+![](/image/scrapy-prepare-2.png)
 
 ```
 csdn # 工程根目录
@@ -57,7 +57,7 @@ scrapy genspider read_csdn_article blog.csdn.net
 ```
 其中`read_csdn_article`是项目的名字，`blog.csdn.net`是爬取的范围
 
-![](image/scrapy-prepare-3.png)
+![](/image/scrapy-prepare-3.png)
 
 ##### 2.发生了什么？
 
@@ -98,7 +98,7 @@ scrapy crawl read_csdn_article
 ```
 当然，什么也没有爬到，因为到目前为止还只是一个框架，没有实际的内容
 
-![](image/scrapy-prepare-4.png)
+![](/image/scrapy-prepare-4.png)
 
 #### 五、参考链接
 

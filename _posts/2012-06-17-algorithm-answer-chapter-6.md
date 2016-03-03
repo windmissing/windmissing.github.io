@@ -229,8 +229,9 @@ A = {84,22,19,10,3,17,6,5,9}
 
 因此一定要先执行MAX-HEAPIFY(i)才能执行MAX-HEAPIFY(PARENT(i))
 
-![](image/e0677a6dad948f0ec318147a17122084.jpg)
+![](/image/e0677a6dad948f0ec318147a17122084.jpg)
 
+[aaa](/image/e0677a6dad948f0ec318147a17122084.jpg)
 
 ##### 6.3-3
 
