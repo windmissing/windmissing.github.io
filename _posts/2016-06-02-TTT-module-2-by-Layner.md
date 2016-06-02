@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "TTT module 2笔记"
-category: ACM
-tags: [acm, hdoj, 哈夫曼编码]
+category: TTT
+tags: [TTT]
 ---
 
 时间：2016-05-12  讲师：layner
