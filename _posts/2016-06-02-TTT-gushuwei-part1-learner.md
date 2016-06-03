@@ -70,3 +70,26 @@ tags: [TTT, 顾淑伟]
 
 ![]()  
 指导意义：把内容打散成一个一个的点。每20分钟一个亮点
+
+###### 学习体验
+
+![]()  
+学习体验如同爬坡。如果一直处于上升状态，会很累，体验不好。  
+建议波浪式上升，也就是每次上升一点就有个平坦的休息区域。  
+一次上升+休息的周期不超过20分钟  
+
+##### 方案实施
+
+###### 艾宾浩斯遗忘曲线
+
+![](https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464911327&di=65aac5691eb61469fb5d5ee9d17310de&src=http://news.sznews.com/images/attachement/jpg/site3/20151105/001e4f9d635217a4f7e343.jpg)  
+指导意义：讲过一个知识点后，在20分钟内要做一些关键字的回顾
+
+###### 学习金字塔
+
+![](http://www.onesmart.org/images/xuep1.jpg)
+
+##### 效果跟踪
+
+培训师必备能力  
+自我评估表
