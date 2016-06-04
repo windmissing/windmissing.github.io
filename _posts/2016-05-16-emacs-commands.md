@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "emacs常用快捷键"
+category: editor
+tags: [emacs, editor]
+---
+
 C = ctrl, M = alt
 
 #### 文件操作
