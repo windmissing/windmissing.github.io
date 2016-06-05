@@ -8,6 +8,9 @@ tags: [ios, MVC]
 #### general description  
 MVC广泛应用于UIKit中，它包括Ｍ、Ｖ、Ｃ这三个主要组件以及它们之间的关系。  
 ![](/image/mvc_general_description.md)  
+
+<!-- more -->
+
 主要组件：  
 M(odel):一个或多个Model对象  
 V(iew):通常是view hierarchic，包括buttons、sliders、textboxes等  
@@ -40,5 +43,21 @@ week reference does not imply ownership
 当被引用的对象deallocated，对它的引用自动变成nil。  
 
 #### View  
-所有View类都UIView子类  
-每个View类可以包括一组子类，称为View Hierarchical
+##### 所有View类都UIView子类  
+每个View类可以包括一组子类，称为View Hierarchic  
+View类还可以包括一系列contraints  
+##### 怎样创建View类  
+1.通过storyborad/nib file，这种方式最常用  
+（1）编辑storyboard，然后build  
+（2）所有的对象都创建到内存中  
+（3）对象呗保存到nib file中  
+（4）创建controller  
+（5）controller尝试读取view对象  
+（6）被引用的对象读到内存中  
+2.通过代码  
+##### 什么时候创建view对象  
+第一次尝试引用View对象的对象  
+##### 谁创建View对象  
+UIViewController  
+
+#### Controller
