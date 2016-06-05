@@ -40,3 +40,5 @@ week reference does not imply ownership
 当被引用的对象deallocated，对它的引用自动变成nil。  
 
 #### View  
+所有View类都UIView子类  
+每个View类可以包括一组子类，称为View Hierarchical
