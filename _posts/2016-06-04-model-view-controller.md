@@ -7,7 +7,7 @@ tags: [ios, MVC]
 
 #### general description  
 MVC广泛应用于UIKit中，它包括Ｍ、Ｖ、Ｃ这三个主要组件以及它们之间的关系。  
-![](/image/mvc_general_description.md)  
+![](/image/mvc_general_description.jpg)  
 
 <!-- more -->
 
@@ -63,4 +63,11 @@ UIViewController
 #### Controller
 Controller是UIViewController的子类  
 UIViewController中包含“从storyboard/nib file中加载View对象”的代码，所以controller能够加载View对象  
-##### Actions
+##### Controller与View之间的关系  
+Controller的父类UIViewController强引用View  
+View的子类subview弱引用Controller，称为action  
+Controller弱引用View的子类subview，称为outlet  
+##### Controller与Model之间的关系  
+Controller强引用Model  
+Model弱引用Controller  
+![](/image/reference_relationship_between_MVC.jpg)
