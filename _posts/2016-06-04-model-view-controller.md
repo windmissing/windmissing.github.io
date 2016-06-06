@@ -61,3 +61,6 @@ View类还可以包括一系列contraints
 UIViewController  
 
 #### Controller
+Controller是UIViewController的子类  
+UIViewController中包含“从storyboard/nib file中加载View对象”的代码，所以controller能够加载View对象  
+##### Actions
