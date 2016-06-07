@@ -13,6 +13,8 @@ tags: [cloud, micro-service, 微服务, 服务发现]
 
 ![0516_richardson_服務](http://blog.daocloud.io/wp-content/uploads/2016/05/0516_richardson_%E6%9C%8D%E5%8B%99.jpg)
 
+<!-- more -->
+
 #### Chris Richardson 微服务系列全 7 篇：
 
 1. [微服务架构的优势与不足](http://blog.daocloud.io/microservices-1/)
