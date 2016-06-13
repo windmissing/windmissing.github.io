@@ -171,21 +171,18 @@ class csdn_article(scrapy.Item):
     time = scrapy.Field()
     reader = scrapy.Field()
     comments = scrapy.Field()
-    atype = scrapy.Field()
     contents1 = scrapy.Field()
-    
+    contents2 = scrapy.Field()
+
     def getString(self) :
-      str = "url: " + self['url'] + "\n"
-      str += "title: " + self['title'] + '\n'
-      str += "time: " + self['time'] + '\n'
-      str += 'reader: ' + self['reader'] + '\n'
-      str += 'comments: ' + self['comments'] + '\n'
-      str += 'atype: ' + self['atype'] + '\n'
-#      for text in self['contents1'] :
-#        str += text + '\n'
-#      for text in self['contents2'] :
-#        str += text + '\n'
-      return str
+       str = "url: " + self['url'] + "\n"
+       str += "title: " + self['title'] + '\n'
+       str += "time: " + self['time'] + '\n'
+       str += 'reader: ' + self['reader'] + '\n'
+       str += 'comments: ' + self['comments'] + '\n'
+       str +=  self['contents1'] + '\n'
+       str +=  '\n'.join(self['contents2']) + '\n'
+       return str
 ```
 
 #### 六.存储文章信息及内容
