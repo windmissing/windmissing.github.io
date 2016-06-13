@@ -202,17 +202,17 @@ item = csdn_article()
 
 为什么contents有两个呢？因为csdn的文章可以使用markdown和网页这两种不同的编辑器。使用不编辑器写出来的文章CSS样式也不同。无法判断某一篇文章使用的是哪种，所以就把两种方式的内容都获取出来了。
 
-**存储文章内容的部分还需要完善**
-
 ```python
+item = csdn_article()
 item["url"] = response.url
 item["title"] = response.xpath('//*[@id="article_details"]/div[1]/h1/span/a/text()').extract()[0].replace("\r\n", '').replace(' ','')
-item["time"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[1]/text()').extract()[0]
-item["reader"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[2]/text()').extract()[0]
-item["comments"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[3]/text()').extract()[0]
-item["atype"] = response.xpath('//*[@id="article_details"]/div[3]/div[2]/label/span/em/text()').extract()[0]
-item["contents1"] = response.xpath('//*[@id="article_content"]/p/text()').extract()[0],
-#        item["contents2"] = response.xpath('//*[@id="article_content"]/div/p/text()').extract(),
+prefix = self.div_or_div2(response)
+item["time"] = response.xpath(prefix + 'span[1]/text()').extract()[0]
+item["reader"] = response.xpath(prefix + 'span[2]/text()').extract()[0]
+item["comments"] = response.xpath(prefix + 'span[3]/text()').extract()[0]
+item["contents1"] = self.get_contents1(response)
+item["contents2"] = self.get_contents2(response)
+ 
 yield item
 ```
 
@@ -243,6 +243,46 @@ yield scrapy.Request(url, callback=self.detail_page)
 
 ```python
 with codecs.open(filename, 'w', 'utf-8') as f:
+```
+
+##### 3.同一内容的xpath不同
+
+有的页面有label，有的页面没有，导致time, reader, comments的xpath不同。  
+例如time，没有label时，time的xpath为`//*[@id="article_details"]/div[2]/div/span[1]`  
+有label时，label的xpath为`//*[@id="article_details"]/div[2]/div[1]/span`，而time的xpath为`//*[@id="article_details"]/div[2]/div[2]/span[1]`  
+因此先要判断label是否存在  
+
+```python
+def is_label_exist(self, response):
+    article_1 = response.xpath('//*[@id="article_details"]/div[2]/div/span[1]').extract()[0]
+    if re.match(r'/d',article_1):
+        return False
+    else:
+        return True
+``` 
+根据不同情况构造不同的path  
+```python
+def div_or_div2(self, response):
+    if self.is_label_exist(response):
+        return '//*[@id="article_details"]/div[2]/div[2]/'
+    else:
+        return '//*[@id="article_details"]/div[2]/div/'
+```
+
+##### 4.获取contents2得到的list  
+不同于上前获取到的list，在前面获取到的list中实际只用第一项，所以会取下标[0]  
+contents2得到的list每一项都要用到  
+```python
+def get_contents2(self, response):
+    ret = response.xpath('//*[@id="article_content"]/div/p/text()').extract()
+    if type(ret) == type((1,)):
+        return ret[0]
+    else:
+        return ret
+```
+而在用的时候直接把list转换为字符串  
+```
+str +=  '\n'.join(self['contents2']) + '\n'
 ```
 
 #### 八、附完整代码
@@ -280,7 +320,6 @@ class DmozSpider(scrapy.Spider):
         print list_count
         for count in range(list_count+1):
             url = "http://blog.csdn.net/mishifangxiangdefeng/article/list/" + str(count)
-#            print url
             yield scrapy.Request(url, callback=self.article_page)
 
 
@@ -291,17 +330,44 @@ class DmozSpider(scrapy.Spider):
                 url = urljoin_rfc(base_url, url)
                 yield scrapy.Request(url, callback=self.detail_page)
 
+    def div_or_div2(self, response):
+      if self.is_label_exist(response):
+        return '//*[@id="article_details"]/div[2]/div[2]/'
+      else:
+        return '//*[@id="article_details"]/div[2]/div/'
+
+    def is_label_exist(self, response):
+        article_1 = response.xpath('//*[@id="article_details"]/div[2]/div/span[1]').extract()[0]
+        if re.match(r'/d',article_1):
+            return False
+        else:
+            return True
+
+    def get_contents1(self, response):
+       for i in range(9):
+           xpath = '//*[@id="article_content"]/p[%d]/text()' % (i)
+           if response.xpath(xpath).extract():
+               ret += response.xpath(xpath).extract()[0]
+        return ret
+
+    def get_contents2(self, response):
+        ret = response.xpath('//*[@id="article_content"]/div/p/text()').extract()
+        if type(ret) == type((1,)):
+            return ret[0]
+        else:
+            return ret
 
     def detail_page(self, response):
         item = csdn_article()
         item["url"] = response.url
         item["title"] = response.xpath('//*[@id="article_details"]/div[1]/h1/span/a/text()').extract()[0].replace("\r\n", '').replace(' ','')
-        item["time"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[1]/text()').extract()[0]
-        item["reader"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[2]/text()').extract()[0]
-        item["comments"] = response.xpath('//*[@id="article_details"]/div[2]/div[2]/span[3]/text()').extract()[0]
-        item["atype"] = response.xpath('//*[@id="article_details"]/div[3]/div[2]/label/span/em/text()').extract()[0]
-        item["contents1"] = response.xpath('//*[@id="article_content"]/p/text()').extract()[0],
-#        item["contents2"] = response.xpath('//*[@id="article_content"]/div/p/text()').extract(),
+        prefix = self.div_or_div2(response)
+        item["time"] = response.xpath(prefix + 'span[1]/text()').extract()[0]
+        item["reader"] = response.xpath(prefix + 'span[2]/text()').extract()[0]
+        item["comments"] = response.xpath(prefix + 'span[3]/text()').extract()[0]
+        item["contents1"] = self.get_contents1(response)
+        item["contents2"] = self.get_contents2(response)
+
         yield item
         filename = item["title"] + ".csdn"
         with codecs.open(filename, 'w', 'utf-8') as f:
@@ -317,22 +383,17 @@ class csdn_article(scrapy.Item):
     comments = scrapy.Field()
     atype = scrapy.Field()
     contents1 = scrapy.Field()
-#    contents2 = scrapy.Field()
+    contents2 = scrapy.Field()
 
     def getString(self) :
-      str = "url: " + self['url'] + "\n"
-      str += "title: " + self['title'] + '\n'
-      str += "time: " + self['time'] + '\n'
-      str += 'reader: ' + self['reader'] + '\n'
-      str += 'comments: ' + self['comments'] + '\n'
-      str += 'atype: ' + self['atype'] + '\n'
-#      print self['contents1']
-#      print self['contents2']
-#      for text in self['contents1'] :
-#        str += text + '\n'
-#      for text in self['contents2'] :
-#        str += text + '\n'
-      return str
+        str = "url: " + self['url'] + "\n"
+        str += "title: " + self['title'] + '\n'
+        str += "time: " + self['time'] + '\n'
+        str += 'reader: ' + self['reader'] + '\n'
+        str += 'comments: ' + self['comments'] + '\n'
+        str +=  self['contents1'] + '\n'
+        str +=  '\n'.join(self['contents2']) + '\n'
+        return str
 ```
 
 #### 九、参考链接
