@@ -16,7 +16,8 @@ tags: [python, spider, scrapy, proxy, middleware]
 #### 二、配置proxy中间件
 
 打开setting.py文件  
-找到DOWNLOADER_MIDDLEWARES这一项，把注释打开  
+找到`DOWNLOADER_MIDDLEWARES`这一项，把注释打开  
+
 ```python
 DOWNLOADER_MIDDLEWARES = {
     'fetch_csdn_articles.middlewares.MyCustomDownloaderMiddleware': 543,
@@ -28,6 +29,7 @@ DOWNLOADER_MIDDLEWARES = {
 #### 三、编写proxy中间件
 
 创建文件`middlewares.py`，与setting中的第二项对应  
+
 ```
 touch middlewares.py
 ```
@@ -35,6 +37,7 @@ touch middlewares.py
 `ProxyMiddleware`类，与setting中的第三项对应
 
 写入内容  
+
 ```python
 # Start your middleware class
 class ProxyMiddleware(object):
