@@ -8,7 +8,7 @@ tags: [python, spider, scrapy, agent client, middleware, 401]
 #### 一、问题现象  
 
 在使用scrapy爬取有些网页时会返回401错误，如图所示：  
-![](/image/401-error-from-scrapy.png)  
+![](/image/401-error-from-scrapy.jpg)  
 401错误只指认证失败，一般有两个原因：  
 1.登陆网页需要提供用户名、密码，而没有提供或者提供的不正确  
 2.服务器做了客户端过滤，只允许浏览器访问，而不允许spider访问  
