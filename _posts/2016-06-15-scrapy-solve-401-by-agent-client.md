@@ -29,7 +29,9 @@ chrome提供这样的功能，以chrome为例：
  - 打开chrome浏览器  
  - 右键->Inspect -> network  
  - 登陆网页  
- - 查看消息，查看`User-Agent`  
+![](/image/inspect-network.jpg)
+ - 选择其中一条查看，找到`User-Agent`  
+![](/image/request-headers-agent-client.jpg)  
 本文得到的`User-Agent`是`'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'`  
 
 ##### 3.配置多个agent client  
