@@ -9,7 +9,7 @@ tags: [python, spider, scrapy, agent client, middleware, 401]
 
 在使用scrapy爬取有些网页时会返回401错误，如图所示：  
 ![](/image/401-error-from-scrapy.jpg)  
-401错误只指认证失败，一般有两个原因：  
+401错误是指认证失败，一般有两个原因：  
 1.登陆网页需要提供用户名、密码，而没有提供或者提供的不正确  
 2.服务器做了客户端过滤，只允许浏览器访问，而不允许spider访问  
 本文只解决原因2导致的401错误，对于原因的解决方法，请参考[《scrapy - 模拟登陆》](spider/2016-06/scrapy-solve-401-by-agent-client.html)  
@@ -34,8 +34,10 @@ chrome提供这样的功能，以chrome为例：
 ![](/image/request-headers-agent-client.jpg)  
 本文得到的`User-Agent`是`'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'`  
 
-##### 3.配置多个agent client  
-为了伪装的更像客户端，可以在每次访问时随机地使用一种agent client。  
+#### 三、为request配置agent client
+##### 1.配置多个agent client  
+既然服务器只是通过检查`User-Agent`字段来判断客户端类型的，那么只需要在requst中填上可用的agent client可以骗过服务器。  
+为了伪装的更像客户端，可以准备多个可用的agent client，在每次访问时随机地使用一种。  
 在setting.py中加入这样的内容  
 
 ```python
@@ -47,7 +49,7 @@ USER_AGENTS = ['Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l
                'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0']
 ```
 
-##### 4.配置中间件  
+##### 2.配置中间件  
 配置中间件的作用是使每一次request都会使用USER_AGENTS  
 
 ```
