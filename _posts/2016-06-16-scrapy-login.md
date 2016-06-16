@@ -34,7 +34,7 @@ formdata中填入附加信息
 
 #### 三、附加信息怎么填
 ##### 附加信息是怎么
-这几步可参考这里：[link](https://github.com/windmissing/windmissing.github.io/blob/master/_posts/2016-06-15-scrapy-solve-401-by-agent-client.md#2如何获取agent-client)  
+这几步可参考这里：[link](/spider/2016-06/scrapy-solve-401-by-agent-client.html#2如何获取agent-client)  
 - 打开chrome
 - 右键->inspect->network  
 - 打开要登录的页面  
