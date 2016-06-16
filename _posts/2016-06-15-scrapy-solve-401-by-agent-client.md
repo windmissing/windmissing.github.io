@@ -58,7 +58,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 ```
 
-##### 5.编写中间件代码
+##### 3.编写中间件代码
 在`middlewares.py`中加入这样的代码：  
 
 ```python
@@ -73,3 +73,6 @@ class RandomUserAgent(object):
   def process_request(self, request, spider):
     request.headers.setdefault('User-Agent', random.choice(self.agents))
 ```
+
+#### 四、运行效果  
+![](/image/scrapy_pass_401.jpg)
