@@ -12,7 +12,7 @@ tags: [python, spider, scrapy, agent client, middleware, 401]
 401错误是指认证失败，一般有两个原因：  
 1.登陆网页需要提供用户名、密码，而没有提供或者提供的不正确  
 2.服务器做了客户端过滤，只允许浏览器访问，而不允许spider访问  
-本文只解决原因2导致的401错误，对于原因的解决方法，请参考[《scrapy - 模拟登陆》](spider/2016-06/scrapy-solve-401-by-agent-client.html)  
+本文只解决原因2导致的401错误，对于原因的解决方法，请参考[《scrapy - 模拟登陆》](/spider/2016-06/scrapy-login.html)  
 
 <!-- more -->
 
