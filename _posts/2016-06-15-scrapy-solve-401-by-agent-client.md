@@ -37,6 +37,7 @@ chrome提供这样的功能，以chrome为例：
 ##### 3.配置多个agent client  
 为了伪装的更像客户端，可以在每次访问时随机地使用一种agent client。  
 在setting.py中加入这样的内容  
+
 ```python
 USER_AGENTS = ['Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
@@ -48,6 +49,7 @@ USER_AGENTS = ['Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l
 
 ##### 4.配置中间件  
 配置中间件的作用是使每一次request都会使用USER_AGENTS  
+
 ```
 DOWNLOADER_MIDDLEWARES = {
     'meeting_room.middlewares.RandomUserAgent':543,
@@ -56,6 +58,7 @@ DOWNLOADER_MIDDLEWARES = {
 
 ##### 5.编写中间件代码
 在`middlewares.py`中加入这样的代码：  
+
 ```python
 import settings
 class RandomUserAgent(object):
