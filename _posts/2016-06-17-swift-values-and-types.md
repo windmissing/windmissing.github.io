@@ -5,7 +5,7 @@ category: [ios, 编程语言]
 tags: [ios, swift]
 ---
 
-### 数据 - 常量 & 变量  
+## 数据 - 常量 & 变量  
 语法格式：  
 
 ```swift
@@ -21,7 +21,9 @@ let msg : String = "Hello world"
 
 <!-- more -->
 
-### 类型  
+---
+
+## 类型  
 
 swift支持的类型包括：Int, Double, String, Array, Dictionary, Tuple, Optional, Class  
 其中Class是引用类型，其它都是值类型。关于引用类型和值类型将在下文介绍。
@@ -111,6 +113,7 @@ let a : Int = age?? -1
 ###### （5）接收optional?
 `function_may_fail`可能返回一个有意义的值，也可能返回nil。  
 如果`function_may_fail`返回nil，后面将不再继续执行，而是将nil返回给val  
+
 ```swift
 let val = function_may_fail()?.another_function()
 ```
@@ -131,5 +134,14 @@ let age = Int!
  如果这个对象没有创建，在运行时能够及时地得到反馈。  
  
  #### 5.字典
- 
- 
+
+```swift
+//关键字 字典名 : [key类型 : value类型 ] = [ key1 : value1, key2 : value2 ...]
+let student : [String, Int] = [ "Lily" : 15, "Lucy", 16]
+```
+
+读取字典的内容时**强烈建议**使用`if let`组合。因为如果key不存在，就会返回nil。
+
+```swift
+if let age = student["Tom"] { ... }
+```
