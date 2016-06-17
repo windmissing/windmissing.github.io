@@ -47,5 +47,25 @@ let introduce : String = String(format : "I'm %d years old", age)
 
 ```swift
 //把单个数据组成元组
-关键字 元组名 : (类型1， 类型2) = []
+//关键字 元组名 : (类型1, 类型2 ... ) = [数据1, 数据2 ...]
+let student : (String, Int) = ["lily", 15]
+
+//把元组解析成单个数据
+//关键字 (数据名1, 数据名2 ... ) : (类型1, 类型2 ...) = 元组名
+let (name, age) : (String, Int) = student
+//关键字 (数据名1 : 类型1, 数据名2 : 类型2 ... ) = 元组名
+let (name : String, age : Int) = student
 ```
+
+###### 用法
+
+ - 类似C结构体的用法
+ - 作为函数的多个返回值
+ - store compound data in arrays
+
+##### 4.optionals
+###### nil
+nil类似于C中的NULL、python中的None  
+nil可以赋值给任意类型  
+数据被赋值为nil也算是初始化过  
+###### optionals类型  
