@@ -127,13 +127,14 @@ let age = Int!
  - 不能把optional!的对象赋值为nil，否则会导致crash
  - 使用optional!时非常省心，不需要做判断，因为完全不用担心它是nil
  
- ###### 用法实战
- 在myViewController中有对控件view对象的引用。  
- 在[《ios开发中的MVC模型》](/ios/2016-06/model-view-controller.html)提到过，view对象都是lazy instantiate的。它们在被引用之前都是weak nil reference。在第一次被引用时由UIViewController创建。  
- 如何确保在引用时，UIViewController已经做了创建的工作？就是在myViewController把引用设置为optional!类型。  
- 如果这个对象没有创建，在运行时能够及时地得到反馈。  
+###### 用法实战  
+
+在myViewController中有对控件view对象的引用。  
+在[《ios开发中的MVC模型》](/ios/2016-06/model-view-controller.html)提到过，view对象都是lazy instantiate的。它们在被引用之前都是weak nil reference。在第一次被引用时由UIViewController创建。  
+如何确保在引用时，UIViewController已经做了创建的工作？就是在myViewController把引用设置为optional!类型。  
+如果这个对象没有创建，在运行时能够及时地得到反馈。  
  
- #### 5.字典
+#### 5.字典
 
 ```swift
 //关键字 字典名 : [key类型 : value类型 ] = [ key1 : value1, key2 : value2 ...]
