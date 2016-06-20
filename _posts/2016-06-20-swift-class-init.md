@@ -27,7 +27,7 @@ class person{
         self.name = personName
     }
 }
-let me : person = perons("lily")
+let me : person = person(personName : "lily")
 ```
 
 ##### 3.不初始化成员
@@ -52,14 +52,14 @@ class person{
         self.name = personName
         self.age = personAge
     }
-    convenience override init(personName : String)
+    convenience init(personName : String)
     {
         self.init(personName : personName, personAge : 0)
     }
 }
 
-let a : person = person("lily", 15)
-let b : person = person("lucy")
+let a : person = person(personName : "lily", personAge : 15)
+let b : person = person(personName : "lucy")
 ```
 convenience的构造函数必须调用self.init函数
 
@@ -70,12 +70,38 @@ convenience的构造函数必须调用self.init函数
 父类相对于子类没有增加成员，不需要初始化
 
 ```swift
-稍后补上
+class person
+{
+    var name : String = "lily"
+}
+class student : person
+{
+}
+var me : student = student()
 ```
 
 ##### 子类初始化时用到父类的成员
 
 使用super.父类函数()来调用父类成员
+
+```swift
+class person
+{
+    var name : String
+    init(personName : String)
+    {
+        self.name = personName
+    }
+}
+class student : person
+{
+    init()
+    {
+        super.init(personName: "lily")
+    }
+}
+var me : student = student()
+```
 
 ##### 区分父类与子类
 
