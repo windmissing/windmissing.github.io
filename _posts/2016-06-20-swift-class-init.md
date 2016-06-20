@@ -58,6 +58,26 @@ class person{
     }
 }
 
+let a : person = person("lily", 15)
+let b : person = person("lucy")
+```
+convenience的构造函数必须调用self.init函数
+
 #### 继承一个类，并初始化
 
-##### 
+##### 没有成员需要初始化
+
+父类相对于子类没有增加成员，不需要初始化
+
+```swift
+稍后补上
+```
+
+##### 子类初始化时用到父类的成员
+
+使用super.父类函数()来调用父类成员
+
+##### 区分父类与子类
+
+super.父类函数()
+self.子类函数()
