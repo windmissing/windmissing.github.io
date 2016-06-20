@@ -14,6 +14,8 @@ class person{
 let me : person = person()
 ```
 
+<!-- more -->
+
 ##### 2.使用构造函数初始化类的成员
 
 ```swift
