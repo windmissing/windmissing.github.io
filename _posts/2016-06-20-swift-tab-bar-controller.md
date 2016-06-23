@@ -30,6 +30,6 @@ tags: [ios, swift]
 （1）页面1有两个item  
 （3）页面1与页面3之间有一个relationship  
 
-#### 运行效果
+#### 四、运行效果
 打开后页面下方有2个tab item
 默认显示与第一个item相关联的页面
