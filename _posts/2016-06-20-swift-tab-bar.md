@@ -5,7 +5,11 @@ category: [ios]
 tags: [ios, swift]
 ---
 
-#### 一、启用tab bar
+#### 一、期待目标
+
+<!-- more -->
+
+#### 二、启用tab bar
 ##### 步骤
 1.选中view controller  
 2.Editor->Embed in->Tab Bar Controller  
@@ -16,7 +20,7 @@ tags: [ios, swift]
 （4）当前View Controller与新的View Controller之间有个relationship  
 （5）如果当前页面有内容，内容会移到新的View Controller上  
 
-#### 二、增加一个tab item
+#### 三、增加一个tab item
 ##### 步骤
 1.拖进一个控件View Controller（页面3）  
 2.点击tab bar Controller  
