@@ -5,13 +5,6 @@ category: [ios]
 tags: [ios, swift]
 ---
 
----
-layout: post
-title:  "IOS开发 - 标签栏（tab bar）"
-category: [ios]
-tags: [ios, swift]
----
-
 #### 一、期待目标
 
 <!-- more -->
