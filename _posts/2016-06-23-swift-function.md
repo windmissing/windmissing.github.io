@@ -42,9 +42,66 @@ area( _ ： width : )
 let a = area(2, width : 3)
 ```
 
-##### 
-#### 返回值类型
+##### 没有外参名
 
+```swift
+//声明
+func area(length : Int, _ width : Int) {
+    return length * width
+}
+//函数名
+area( _ : _ : )
+//调用
+let a = area(2, 3)
+```
+
+##### 没有函数
+
+```swift
+func no_param_function(_ : Void)
+```
+括号中的内容不能去掉  
+
+#### 返回值类型
+##### 返回Void
+##### 返回多个数据时可以使用元组
+
+```swift
+func parseStringToDate(string str : String) -> (day : Int, month : String, year : Int) {
+    ...
+    return (day : d, month : m, year : y)
+}
+let (d, m) = parseStringToDate(string : str)
+```
+
+##### 返回optionals时使用nil表示失败  
 #### 参数属性
+##### 设置参数默认值
+
+```swift
+func area(length : Int, width : Int = 2) -> Int
+```
+带默认值的参数必须是最后一个参数  
+
+##### optional参数
+使用这个参数时要结合if let  
+
+##### 参数值可变量
+默认情况下，函数的参数是按值传递的，参数到了函数内部会拷贝一份再使用。也就是说，函数内对参数的改变不影响函数外的调用者。  
+如果希望改变，可以有两种方法：  
+1.var关键字  
+
+```swift
+func area(var length : Int, width : Int) -> Int {
+    length = length + 1
+    return length
+}
+var length = 2
+length = area(length, width : 2)
+```
+说明：使用var的参数仍然是按值拷贝，但是在函数结束时它会再拷贝一份出来
+
+2.inout关键字  
 
 #### 参数个数
+
