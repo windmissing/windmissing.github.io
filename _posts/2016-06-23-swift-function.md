@@ -103,5 +103,28 @@ length = area(length, width : 2)
 
 2.inout关键字  
 
+```swift
+func area(inout length : Int, _ width : Int) -> Int {
+    length = length + 1
+    return length * width
+}
+var length : Int = 1
+let a = area(&length, 3)
+```
+说明：  
+inout关键字与默认值不能同时使用  
+使用inout后会以引用方式传参  
 #### 参数个数
 
+```swift
+func recipe(title t : String, ingredients : String ...) -> String {
+    for ing in ingredients {
+        ...
+    }
+    ...
+}
+let page = recipe(title : "title", ingredients : "aaa", "bbb", "ccc")
+```
+说明：  
+ingredients是一个String类的数组，后面的可变个数的参数都必须是String的  
+可变长参数必须是最后一个参数
