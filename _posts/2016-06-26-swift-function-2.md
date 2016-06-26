@@ -42,3 +42,62 @@ let evens = array.map(isEven)
 evens为[false, true, false, true, false]  
 map功能完成了从Int到Bool的映射  
 Bool可以是其它类型，Int必须是Int
+
+##### filter
+
+```swift
+func isEven(val : Int) -> Bool {
+    return (val % 2) == 0
+}
+let evens = array.filter(isEven)
+```
+events为[2, 4]  
+
+##### reduce
+
+```swift
+func f(a : Int, _ b : Int) -> Int {
+    return a + b
+}
+let array = [1, 2, 3, 4, 5]
+let sum = array.reduce(0, combine : f)
+```
+sum为15  
+计算过程如下：  
+y = 0  
+y = f(y, 1)  
+y = f(y, 2)  
+y = f(y, 3)  
+y = f(y, 4)  
+y = f(y, 5)  
+return y
+
+#### 三、操作符函数
+##### 一元操作符
+prefix和postfix分别用于一元的前置操作符和后置操作符  
+关键字放在func前  
+
+```swift
+prefix operator$$ { }
+prefix func $$ ( u : [Double] ) -> Double {
+    return u.reduce(0.0, combine : f)
+}
+let vec = [1.0, 3.0, 6.0]
+let sum = $$vec
+```
+sum = 10
+
+##### 二元操作符infix
+
+```swift
+infix operator **{associativity left precedence 160} //定义结合性和优先级
+func **(a : Int, _ b : Int) -> Int {
+    return pow(a, b)
+}
+```
+2 ** 8    //256  
+4 ** 3 ** 2    //4096
+
+#### 四、嵌套函数
+
+#### 五、函数作为返回值
