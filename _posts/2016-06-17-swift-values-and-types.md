@@ -45,7 +45,7 @@ let introduce : String = String(format : "I'm %d years old", age)
 ```
 
 #### 3.Tuple 元组
-##### 语法  
+##### 命令元组  
 
 ```swift
 //把单个数据组成元组
@@ -59,6 +59,14 @@ let (name, age) : (String, Int) = student
 let (name : String, age : Int) = student
 ```
 
+##### 无命名元组‘
+
+```swift
+//把单个数据组成元组
+let student = (name : "lily", age : 15)
+let name = student.name
+let age = student.age
+```
 ##### 用法
 
  - 类似C结构体的用法
