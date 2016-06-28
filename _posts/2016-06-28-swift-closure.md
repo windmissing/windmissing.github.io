@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "swift - 数据和类型"
+title:  "swift - closure"
 category: [ios, 编程语言]
-tags: [ios, swift]
+tags: [ios, swift, closure]
 ---
 
 #### closure
