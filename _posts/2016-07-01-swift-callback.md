@@ -18,6 +18,8 @@ tags: [ios, swift, callback]
 | B返回之前C处理block状态 | B和C运行在不同的线程，不会互相block。|
 | B返回之后C继续执行 | B结束后会通知C |
 
+<!-- more -->
+
 主线程不能被block住，否则  
  - UI无响应
  - APP卡住
