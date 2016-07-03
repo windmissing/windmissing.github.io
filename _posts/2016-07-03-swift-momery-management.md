@@ -9,7 +9,7 @@ tags: [ios, swift]
 
 值类型的生命周期仅取决于它的作用域。因此对于值类型不需要考虑内存管理的问题
 
-引用类型（类、函数、closure）的内存管理：
+引用类型（类、函数、closure）的内存管理：  
  - 大多数由ARC完成  
  - 没有garbage collerctor  
 
@@ -75,7 +75,7 @@ object4是否存在对RC没有影响，但当object2不存在时，object4对obj
 
 #### 举例3
 
-```
+~~~swift
 ---------
 |object1|
 ---------
@@ -90,13 +90,13 @@ object4是否存在对RC没有影响，但当object2不存在时，object4对obj
 |   print("Hello \(self.lastName)"                  |
 |}                                                  |
 -----------------------------------------------------
-```
+~~~
 这段代码的问题是自引用  
 对于closure这样的引用类型，赋值相当于设置引用
 也就是说，object2的`greet : ()->()`指向`{print("Hello \(self.lastName)"}`  
 而closure中的self.lastname又指向了object2中的lastName  
 
-```
+~~~
 ---------
 |object1|
 ---------
@@ -117,7 +117,7 @@ object4是否存在对RC没有影响，但当object2不存在时，object4对obj
 |   print("Hello \(self.lastName)"                  |
 |}                                                  |
 -----------------------------------------------------
-```
+~~~
 解决方案：  
 使用强引用变为unknown引用  
 
