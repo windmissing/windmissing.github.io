@@ -7,7 +7,8 @@ tags: [g++, ld]
 
 #### O、什么是符号
 
-在链接中，我们将函数和变量统称为符号，函数名或变量名就是符号名。
+符号是指代码中的变量与函数。  
+[链接中的符号](http://windmissing.github.io/compile/2015-04/symbols-in-linking.html)
 
 #### 一、分析
 
