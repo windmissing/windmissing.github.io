@@ -82,21 +82,20 @@ gcc/ld可以链接三种类型的可重定位目标文件，分别是目标文�
 
 |实验序号|a.cpp编译生成的文件类型|b.cpp编译生成的文件类型|操作语句|链接结果（成功、失败）|若成功，链接进去的是哪个文件，若失败，先链接进去的是哪个文件|原因|
 |---|---|---|---|---|---|---|
-|1|a.oxx|b.oxx|`g++ -o main main.cpp a.oxx b.oxx`|失败||[普通目标文件的符号解析与重定义处理策略](http://blog.csdn.net/mishifangxiangdefeng/article/details/44859389)|
-|2|a.oxx|libb.a|`g++ -o main main.cpp a.oxx libb.a`|成功|a.oxx|[静态库的符号解析和重定义处理策略](http://blog.csdn.net/mishifangxiangdefeng/article/details/45127863)|
-|3|a.oxx|libb.so|`g++ -o main main.cpp a.oxx -L. -lb`|成功|a.oxx||
-|4|liba.a|b.oxx|`g++ -o main main.cpp liba.a b.oxx`|失败|liba.a||
-|5|liba.a|libb.a|`g++ -o main main.cpp liba.a libb.a`|成功|liba.a||
-|6|liba.a|libb.so|`g++ -o main main.cpp liba.a -L. -lb`|成功|liba.a||
-|7|liba.so|b.oxx|`g++ -o main main.cpp -L. -la b.oxx`|成功|b.oxx||
-|8|liba.so|libb.a|`g++ -o main main.cpp -L. -la libb.a`|成功|liba.so||
-|9</td><td>liba.so</td><td>libb.so</td><td>g++ -o main main.cpp -L. -la lb</td><td>成功</td><td>liba.so</td>
-</tr>
-</table>
-3.分析结果
-（1）1 => 当一个符号在多个目标文件(.o)里同时出现时, LD报错. 提示符号多重定义.
-（2）5， 6， 8， 9 => 当一个符号在多个静态库(.a)或者动态库(.so)里同时出现时, LD不报错, 以第一个遇到的为准. 
-（3）3， 7 => 当一个符号在目标文件(.o)和动态库(.so)里同时出现时，取目标文件(.o)里的符号
+|1|a.oxx|b.oxx|g++ -o main main.cpp a.oxx b.oxx|失败||[普通目标文件的符号解析与重定义处理策略](http://blog.csdn.net/mishifangxiangdefeng/article/details/44859389)|
+|2|a.oxx|libb.a|g++ -o main main.cpp a.oxx libb.a|成功|a.oxx|[静态库的符号解析和重定义处理策略](http://blog.csdn.net/mishifangxiangdefeng/article/details/45127863)|
+|3|a.oxx|libb.so|g++ -o main main.cpp a.oxx -L. -lb|成功|a.oxx||
+|4|liba.a|b.oxx|g++ -o main main.cpp liba.a b.oxx|失败|liba.a||
+|5|liba.a|libb.a|g++ -o main main.cpp liba.a libb.a|成功|liba.a||
+|6|liba.a|libb.so|g++ -o main main.cpp liba.a -L. -lb|成功|liba.a||
+|7|liba.so|b.oxx|g++ -o main main.cpp -L. -la b.oxx|成功|b.oxx||
+|8|liba.so|libb.a|g++ -o main main.cpp -L. -la libb.a|成功|liba.so||
+|9|liba.so|libb.so|g++ -o main main.cpp -L. -la lb|成功|liba.so||
+
+#### 四、分析结果
+（1）1 => 当一个符号在多个目标文件(.o)里同时出现时, LD报错. 提示符号多重定义.  
+（2）5， 6， 8， 9 => 当一个符号在多个静态库(.a)或者动态库(.so)里同时出现时, LD不报错, 以第一个遇到的为准.   
+（3）3， 7 => 当一个符号在目标文件(.o)和动态库(.so)里同时出现时，取目标文件(.o)里的符号  
 
 
 
