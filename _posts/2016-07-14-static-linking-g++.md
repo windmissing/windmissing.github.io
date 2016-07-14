@@ -29,6 +29,11 @@ ccc.so  ---|
 合并ELF所采用的策略是相同段合并。  
 ![](http://images.cnitblog.com/blog/407509/201312/18104333-2a9fb85d57b44882bd7e52a3583aa393.png)
 
+##### 1.5 符号冲突
+
+两个ELF拥有同一个外部符号，合并的时候怎样取舍？  
+这里使用了[“强符号/弱符号”](http://windmissing.github.io/compile/2015-04/symbol-confliction-in-normal-target-file.html)原则。
+
 ##### 2.段空间（VMA）分配
 
 链接前，所有段的VMA都是0。形成可执行文件后，才会给各个段分配VMA。  
