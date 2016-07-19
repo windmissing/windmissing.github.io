@@ -23,7 +23,7 @@ tags: [g++, ld]
 
 head.h
 
-```
+```c++
 #include <iostream>
 using namespace std;
 
@@ -32,7 +32,7 @@ void myfun();
 
 a.cpp
 
-```
+```c++
 #include "head.h"
 void myfun()
 {
@@ -41,7 +41,7 @@ void myfun()
 ```
 b.cpp
 
-```
+```c++
 #include "head.h"
 void myfun()
 {
@@ -50,7 +50,7 @@ void myfun()
 ```
 main.cpp
 
-```
+```c++
 #include <iostream>
 using namespace std;
 
