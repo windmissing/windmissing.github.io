@@ -36,7 +36,7 @@ a.cpp
 #include "head.h"
 void myfun()
 {
-	cout<<"myfun in a.cpp<<endl;
+	cout<<"myfun in a.cpp"<<endl;
 }
 ```
 b.cpp
@@ -45,7 +45,7 @@ b.cpp
 #include "head.h"
 void myfun()
 {
-	cout<<"myfun in b.cpp<<endl;
+	cout<<"myfun in b.cpp"<<endl;
 }
 ```
 main.cpp
