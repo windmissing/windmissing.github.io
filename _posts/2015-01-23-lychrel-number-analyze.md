@@ -1,3 +1,4 @@
+---
 layout: post
 title:  "LychrelNumber题目分析"
 category: [dojo]
