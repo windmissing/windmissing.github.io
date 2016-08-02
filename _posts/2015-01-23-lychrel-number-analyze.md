@@ -2,7 +2,7 @@
 layout: post
 title:  "LychrelNumber题目分析"
 category: [dojo]
-tags: []
+tags: [big number]
 ---
 
 #### 题目：
