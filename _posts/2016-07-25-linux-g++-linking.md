@@ -15,7 +15,7 @@ tags: [g++, linking, linux]
 
 #### 基础概念
 
-[ linux g++ 链接器（一）基础概念](http://blog.csdn.net/mishifangxiangdefeng/article/details/52042291)
+[ linux g++ 链接器（一）基础概念](http://windmissing.github.io/compile/2016-07/linux-g++-basic-conception.html)
 
 #### 一个实验
 
