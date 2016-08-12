@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "g++ 动态链接"
+title:  "g++ 链接器（四）-共享目标文件的链接（动态链接）"
 category: [compile]
 tags: [g++, linking, 动态链接]
 ---
