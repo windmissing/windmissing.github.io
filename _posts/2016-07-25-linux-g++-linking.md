@@ -68,6 +68,7 @@ D. 看情况
   
 源代码可以编译成三种目标文件，不同目标文件之间的链接方法不同，结果也不同。读完后面的内容，就能明白其中的道理。  
 
+完整实验请阅读[link](http://windmissing.github.io/compile/2015-04/symbol-redifine-in-g++-ld.html)
 
 #### 可重定位目标文件的链接
 [可重定位目标文件的链接](http://windmissing.github.io/compile/2016-07/static-linking-g++.html)
