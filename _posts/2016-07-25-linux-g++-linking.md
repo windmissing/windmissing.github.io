@@ -13,11 +13,11 @@ tags: [g++, linking, linux]
 
 <!-- more -->
 
-# 基础概念
+#### 基础概念
 
 [ linux g++ 链接器（一）基础概念](http://blog.csdn.net/mishifangxiangdefeng/article/details/52042291)
 
-# 一个实验
+#### 一个实验
 
 请看这样四个文件：
 
@@ -69,10 +69,10 @@ D. 看情况
 源代码可以编译成三种目标文件，不同目标文件之间的链接方法不同，结果也不同。读完后面的内容，就能明白其中的道理。  
 
 
-# 可重定位目标文件的链接
+#### 可重定位目标文件的链接
 [可重定位目标文件的链接](http://windmissing.github.io/compile/2016-07/static-linking-g++.html)
 
-# 静态库的链接  
+#### 静态库的链接  
 
 静态库可以简单看作是一组可重定位文件的打包。  
 虽然链接命令中是把所有文件打包拿来的，但不是每个文件都真的用得到。  
@@ -88,6 +88,6 @@ D. 看情况
 上文的例子中，如果先链接a.o生成的liba.a，那么libb.a中的b.o就会被扔掉。  
 只有main.o和a.o链接，所以链接器不会报错而链接a.o中的符号。
 
-# 共享目标文件的链接
+#### 共享目标文件的链接
 
 [共享目标文件的链接](http://windmissing.github.io/compile/2016-07/dynamic-linking-g++.html)
