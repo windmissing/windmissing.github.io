@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "可重定位目标文件的链接（静态链接）"
+title:  "g++ 链接器（三）-可重定位目标文件的链接（静态链接）"
 category: [compile]
 tags: [g++, linking, static]
 ---
