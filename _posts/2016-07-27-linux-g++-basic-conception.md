@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "linux g++ 链接"
+title:  " linux g++ 链接器（一）基础概念"
 category: [compile]
 tags: [g++, linking, linux]
 ---
