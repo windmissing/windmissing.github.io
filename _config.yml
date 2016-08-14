@@ -17,7 +17,7 @@ atom_path: /atom.xml
 rss_path: /rss.xml
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
     extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
 permalink: /:categories/:year-:month/:title.html
