@@ -84,6 +84,8 @@ cat：读取文件内容，并send
    end
 ```
 #### execute_cgi
+用于处理POST方法或带参数的GET方法。   
+由于需要执行CGI脚本，因此会新建一个进程。  
 
 ```
             start
