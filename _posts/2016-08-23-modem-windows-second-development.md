@@ -189,7 +189,7 @@ SerialModemGateway gateway = new SerialModemGateway("modem.com1", portname, baud
 9600, 19200, 57600, 115200。一般是115200。从设备管理器上查出来的似乎不准，可以用“检测可用的端口”程序检测出来。  
 参数4：制造商  
 smslib支持的制造商可以从org.smslib.modem.athandler查到。  
-![](/iamge/smslib-athandler.jpg)  
+![](/image/smslib-athandler.jpg)  
 最常见的是"Huawei"和"Wavecom"  
 参数5：型号
 smslib支持的型号可以从org.smslib.modem.athandler查到。  
@@ -237,13 +237,16 @@ Service.getInstance().stopService();
 #### 三、踩过的坑
 
 ##### 1.No device response.
+
 制造商填错了
 
 ##### 2.flush
+
 波特率填错了。  
 开始按照设备管理器里查出来的波特率填的，一直报这个错误。改成另一个值就好了。可以设备管理器里查出来的不准。  
 
 ##### 3.write
+
 ![](/image/write_error.jpg)  
 1.设备没连好  
 2.信号不好，表现为灯常亮，正常应该灯闪  
