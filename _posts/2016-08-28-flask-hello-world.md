@@ -73,7 +73,7 @@ python run.py
 ```
 
 打开浏览器，输入127.0.0.1:5000，效果如图：  
-![](/image/flask/hello-world.jpg)
+![](/image/flask-hello-world.jpg)
 
 ---
 
