@@ -52,7 +52,7 @@ from app import views
 
 ```python
 from app import app
-@app.route('/')
+@app.route('/')    # route() 装饰器用于把一个函数绑定到一个 URL 
 @app.route('/index')
 def index():
     return "Hello World!"
@@ -62,7 +62,7 @@ def index():
 
 ```python
 from app import app
-app.run(debug = True)
+app.run(debug = True)     # 打开调试模式，那么服务器会在修改应用之后自动重启，并且当应用出错时还会提供一个 有用的调试器
 ```
 
 #### 四、运行及效果
