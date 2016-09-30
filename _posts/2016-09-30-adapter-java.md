@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JAVA设计模式这适配器"
+title:  "JAVA设计模式之适配器"
 category: [设计模式]
 tags: []
 ---
