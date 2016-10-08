@@ -13,6 +13,8 @@ tags: []
 这五个步骤各自分工完成各自的工作，但它们之前又存在耦合。比如预编译、编译、汇编、链接这四个步骤就是有顺序关系的。它们必须被依次执行，才能得到正确的结果。  
 然而使用者并不关心它们之间是怎么合作的，他们只希望使用一个gcc命令就能得到最终的可执行文件。  
 
+<!-- more -->
+
 ```java
 public class user {
     private target generateTarget(file source)
