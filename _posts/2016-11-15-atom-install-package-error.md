@@ -7,7 +7,9 @@ tags: []
 
 #### 问题一：
 
-can't connect to
+```
+connect ETIMEDOUT 54.197.251.22:443
+```
 
 原因：可能代理的问题
 客户端和浏览器走的代理不同。
