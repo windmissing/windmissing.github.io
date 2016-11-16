@@ -2,7 +2,7 @@
 layout: post
 title:  "atom安装package遇到的问题"
 category: [opensource]
-tags: []
+tags: [atom]
 ---
 
 #### 问题一：
