@@ -10,6 +10,14 @@ tags: []
 can't connect to
 
 原因：可能代理的问题
+客户端和浏览器走的代理不同。
+如果只对浏览器设置了代码，浏览器可以访问，但客户端还是不行。
+设置客户端代理的方法：
+
+```
+cmd
+netsh winhttp import proxy source=ie
+```
 
 #### 问题二：
 
@@ -24,5 +32,12 @@ gyp ERR! install error
 gyp ERR! stack Error: EPERM: operation not permitted, open
 ```
 
-有可能是墙的问题。  
-有可能只是网速的问题。
+有可能是墙的问题。
+有可能只是网速的问题，过会再试。
+也可以选择离线安装。
+
+#### 问题三：离线安装package
+
+进入atom package的安装页面
+使用git clone从git hub上下载工程，并进入目录
+`apm install`或者`npm install`
