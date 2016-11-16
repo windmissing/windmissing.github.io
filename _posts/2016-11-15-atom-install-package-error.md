@@ -43,3 +43,24 @@ gyp ERR! stack Error: EPERM: operation not permitted, open
 进入atom package的安装页面
 使用git clone从git hub上下载工程，并进入目录
 `apm install`或者`npm install`
+
+#### 问题四：git push不成功，又没有任何错误提示
+
+git push不成功，又没有任何错误提示
+使用git bash push提示输入用户名和密码。
+原因是使用了https协议，应改成ssh协议(要先把ssh加到git的工程中)。
+
+```
+git remote -v
+origin  https://github.com/windmissing/windmissing.github.io.git (fetch)
+origin  https://github.com/windmissing/windmissing.github.io.git (push)
+
+git remote rm origin
+
+git remote add origin git@github.com:windmissi
+ng/windmissing.github.io.git
+
+git remote -v
+origin  git@github.com:windmissing/windmissing.github.io.git (fetch)
+origin  git@github.com:windmissing/windmissing.github.io.git (push)
+```
