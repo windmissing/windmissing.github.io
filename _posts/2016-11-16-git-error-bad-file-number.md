@@ -21,7 +21,7 @@ ssh: connect to host github.com port 22: Connection timed out
 ssh: connect to host github.com port 22: Bad file number
 ```
 
-<!- more -->
+<!-- more -->
 
 #### 方法一：使用HTTPS
 
