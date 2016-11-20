@@ -1,5 +1,5 @@
 ---
-layout: post 
+layout: post
 title:  "基于scrapy的爬虫小练习 - 获取CSDN某个用户的所有文章"
 categories: spider
 tags: [python, spider, scrapy]
@@ -62,9 +62,9 @@ class ProxyMiddleware(object):
     encoded_user_pass = base64.encodestring(proxy_user_pass)
     request.headers['Proxy-Authorization'] = 'Basic ' + encoded_user_pass
 ```
-    
+
 #### 三、由起始链接得到每一页（list）链接
-    
+
 ##### 1.从起始链接得到的信息
 
 在设置好项目的`start_urls`之后，运行项目，框架就会自动地爬取`start_urls`中的网页。所有爬取到的结果都会通过一个回调函数返回给开发人员。
@@ -209,7 +209,7 @@ item["reader"] = response.xpath(prefix + 'span[2]/text()').extract()[0]
 item["comments"] = response.xpath(prefix + 'span[3]/text()').extract()[0]
 item["contents1"] = self.get_contents1(response)
 item["contents2"] = self.get_contents2(response)
- 
+
 yield item
 ```
 
@@ -219,8 +219,7 @@ yield item
  filename = item["title"] + ".csdn"
  with codecs.open(filename, 'w', 'utf-8') as f:
       f.write(item.getString())
- ```
-
+```
 
 #### 七、踩过的那些坑
 
@@ -244,10 +243,10 @@ with codecs.open(filename, 'w', 'utf-8') as f:
 
 ##### 3.同一内容的xpath不同
 
-有的页面有label，有的页面没有，导致time, reader, comments的xpath不同。  
-例如time，没有label时，time的xpath为`//*[@id="article_details"]/div[2]/div/span[1]`  
-有label时，label的xpath为`//*[@id="article_details"]/div[2]/div[1]/span`，而time的xpath为`//*[@id="article_details"]/div[2]/div[2]/span[1]`  
-因此先要判断label是否存在  
+有的页面有label，有的页面没有，导致time, reader, comments的xpath不同。
+例如time，没有label时，time的xpath为`//*[@id="article_details"]/div[2]/div/span[1]`
+有label时，label的xpath为`//*[@id="article_details"]/div[2]/div[1]/span`，而time的xpath为`//*[@id="article_details"]/div[2]/div[2]/span[1]`
+因此先要判断label是否存在
 
 ```python
 def is_label_exist(self, response):
@@ -256,8 +255,9 @@ def is_label_exist(self, response):
         return False
     else:
         return True
-``` 
-根据不同情况构造不同的path  
+```
+根据不同情况构造不同的path
+
 ```python
 def div_or_div2(self, response):
     if self.is_label_exist(response):
@@ -266,9 +266,11 @@ def div_or_div2(self, response):
         return '//*[@id="article_details"]/div[2]/div/'
 ```
 
-##### 4.获取contents2得到的list  
-不同于上前获取到的list，在前面获取到的list中实际只用第一项，所以会取下标[0]  
-contents2得到的list每一项都要用到  
+##### 4.获取contents2得到的list
+
+不同于上前获取到的list，在前面获取到的list中实际只用第一项，所以会取下标[0]
+contents2得到的list每一项都要用到
+
 ```python
 def get_contents2(self, response):
     ret = response.xpath('//*[@id="article_content"]/div/p/text()').extract()
@@ -277,8 +279,9 @@ def get_contents2(self, response):
     else:
         return ret
 ```
-而在用的时候直接把list转换为字符串  
-```
+而在用的时候直接把list转换为字符串
+
+```python
 str +=  '\n'.join(self['contents2']) + '\n'
 ```
 
