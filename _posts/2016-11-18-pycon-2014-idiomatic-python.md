@@ -110,4 +110,6 @@ groups = defaultdict(list)
 for name in names:
 groups[len(name)].append(name)
 ```
+
+
 转载注明出处：PyCon2014杭州站 Shi Yuanmin@Nokia coach network

@@ -11,6 +11,8 @@ tags: [atom]
 connect ETIMEDOUT 54.197.251.22:443
 ```
 
+<!-- more -->
+
 原因：可能代理的问题
 客户端和浏览器走的代理不同。
 如果只对浏览器设置了代码，浏览器可以访问，但客户端还是不行。
@@ -40,27 +42,14 @@ gyp ERR! stack Error: EPERM: operation not permitted, open
 
 #### 问题三：离线安装package
 
-进入atom package的安装页面
-使用git clone从git hub上下载工程，并进入目录
+进入atom package的安装目录，例如我的目录是~/.atom/package  
+使用git clone从git hub上下载插件的整个工程，并进入工程目录，例如：
+
+```
+git clone https://github.com/webBoxio/atom-html-preview.git
+cd atom-html-preview
+```
+
 `apm install`或者`npm install`
 
-#### 问题四：git push不成功，又没有任何错误提示
 
-git push不成功，又没有任何错误提示
-使用git bash push提示输入用户名和密码。
-原因是使用了https协议，应改成ssh协议(要先把ssh加到git的工程中)。
-
-```
-git remote -v
-origin  https://github.com/windmissing/windmissing.github.io.git (fetch)
-origin  https://github.com/windmissing/windmissing.github.io.git (push)
-
-git remote rm origin
-
-git remote add origin git@github.com:windmissi
-ng/windmissing.github.io.git
-
-git remote -v
-origin  git@github.com:windmissing/windmissing.github.io.git (fetch)
-origin  git@github.com:windmissing/windmissing.github.io.git (push)
-```
