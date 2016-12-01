@@ -7,6 +7,8 @@ tags: [atom]
 
 Now that we are feeling comfortable with just about everything built into Atom, let's look at how to tweak it. Perhaps there is a keybinding that you use a lot but feels wrong or a color that isn't quite right for you. Atom is amazingly flexible, so let's go over some of the simpler flexes it can do.
 
+<!-- more -->
+
 #### Configuring with CSON
 
 All of Atom's config files (with the exception of your [style sheet](http://flight-manual.atom.io/using-atom/sections/basic-customization/#style-tweaks) and your [Init Script](http://flight-manual.atom.io/hacking-atom/sections/the-init-file)) are written in CSON, short for [CoffeeScript Object Notation](https://github.com/bevry/cson#what-is-cson). Just like its namesake JSON, [JavaScript Object Notation](http://json.org/), CSON is a text format for storing structured data in the form of simple objects made up of key-value pairs.
