@@ -47,9 +47,15 @@ mysql> flush privileges
 #### 遇到问题
 
 1.SQL文件夹要有读权限  
-2.要用admin遇到cmd  
+2.要用admin权限打开cmd  
 3..ini的名字要改  
 4.如果没有data，不要自己创建，从别的版本里拷过来  
+5.字符集不匹配，使用下面的命令更改字符集
+
+```
+show variables like %character_set%
+alter database xxxxx character set utf8;
+```
 
 #### 参考链接
 

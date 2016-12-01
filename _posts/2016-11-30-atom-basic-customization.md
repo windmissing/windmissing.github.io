@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "atom简单配置"
+title:  "【译】atom简单配置"
 category: [opensource]
 tags: [atom]
 ---
