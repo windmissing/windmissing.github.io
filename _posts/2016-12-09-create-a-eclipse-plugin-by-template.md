@@ -14,6 +14,8 @@ File -> New -> Other -> Plug-in Project
 
 选择一个模板，例如“Hello, World Command”，Finish
 
+<!-- more -->
+
 #### 运行效果
 
 出现了这样的一个工程：  
@@ -36,3 +38,36 @@ File -> Export -> Plugin
 
 #### 工程说明
 
+打开plugin.xm，选择Extensions，会看到这样的内容：  
+![](/image/create-a-eclipse-plugin-by-template-1.jpg)  
+
+##### commands结点
+
+提供哪些command。
+
+##### handlers结点
+
+定义处理command执行行为的类。例如触发example.commands.sampleCommand的行为，即弹出“Hello, World Command”，就是在example.handlers.SampleHandler中定义。  
+
+```java
+public class SampleHandler extends AbstractHandler {
+
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+		MessageDialog.openInformation(
+				window.getShell(),
+				"Example",
+				"Hello, Eclipse world");
+		return null;
+	}
+}
+```
+
+##### bindings
+
+##### menus
+
+定义要增加的menu和toolbar的属性，例如：  
+菜单的位置、显示的字符串、快捷键、点击时触发的command  
+工具栏按钮的位置、提示的字符串、图标、点击时触发的command  
