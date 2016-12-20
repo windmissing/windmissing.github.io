@@ -1,0 +1,58 @@
+@startuml
+
+[*] -up-> currentproblem
+[*] -left-> requirements
+[*] --> howtouseit
+[*] -right-> type
+[*] -> shortness
+
+currentproblem -up-> need_several_tools
+need_several_tools : uml editor
+need_several_tools : article editor
+need_several_tools : screenshot
+
+currentproblem -up-> by_mouse
+by_mouse : suosuide
+
+currentproblem -up-> screenshot
+screenshot : background of uml editor
+screenshot : size is different
+
+currentproblem -up-> version_control
+version_control : umls can not be version controlled
+
+requirements -up-> edit
+edit : open it with any editor
+edit : edit it by text
+edit : no mouse operation needed
+edit : separate edit and show
+edit : version control
+requirements -left-> show
+show : even without a tool, I can still read by text
+show : look good and specific
+show : support many kind uml
+show : translate from text to image smartly
+requirements -down-> save
+save : save as text
+save : export to a image, not by jietu
+save : handle all files and operations by only one tool
+
+howtouseit : atom + plantuml + markdown
+howtouseit : edit by atom
+howtouseit : show by graphviz and atom packages
+howtouseit : export to markdown articles
+howtouseit : manage all files(*.puml, *.png, *.md) and all tools (plantuml grammar hightlight, show uml in realtime, preview markdown in realtime) in atom.
+howtouseit : you have to install graphviz, but only one time.
+
+type : sequence
+type : use case
+type : class
+type : activity
+type : activity plus
+type : component
+type : state
+type : object
+
+shortness : not support chinese ye
+shortness : can not control result at one's option
+@enduml

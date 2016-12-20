@@ -1,0 +1,6 @@
+@startuml
+
+Alice -> Bob : Hello
+Bob -> Cady : Hello
+
+@enduml
