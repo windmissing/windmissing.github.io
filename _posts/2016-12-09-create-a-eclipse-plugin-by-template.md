@@ -21,8 +21,11 @@ File -> New -> Other -> Plug-in Project
 出现了这样的一个工程：  
 ![](/image/create-a-eclipse-plugin-by-template-0.jpg)  
 点击运行按钮，将再开一个eclipse  
-效果一：菜单栏Run后面出现“Sample Menu”，点击后弹出对话框：“Hello, Eclipse world”  
-效果二：工具栏出现一个紫色的小球，点击后弹出对话框：“Hello, Eclipse world”  
+
+ - 效果一：菜单栏Run后面出现“Sample Menu”，点击后弹出对话框：“Hello, Eclipse world”  
+ - 效果二：工具栏出现一个紫色的小球，点击后弹出对话框：“Hello, Eclipse world”  
+
+![](/image/create-a-eclipse-plugin-by-template-2.jpg)   
 
 #### 插件导出与加载
 
@@ -38,7 +41,7 @@ File -> Export -> Plugin
 
 #### 工程说明
 
-打开plugin.xm，选择Extensions，会看到这样的内容：  
+打开plugin.xml，选择Extensions，会看到这样的内容：  
 ![](/image/create-a-eclipse-plugin-by-template-1.jpg)  
 
 ##### commands结点
