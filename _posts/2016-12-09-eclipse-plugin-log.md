@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "eclipse插件打log"
+title:  "eclipse插件开发 - 打log"
 category: [编程语言]
 tags: [eclipse, plugin, log]
 ---
 
-eclipse插件在开发过程中可以通过`System.out.println(message)`打log，从通过Console查看log。  
+eclipse插件在开发过程中可以通过`System.out.println(message)`打log，测试时通过Console查看log。  
 插件到加载到真实环境中后，这些log就看不到了。
 
 <!-- more -->
