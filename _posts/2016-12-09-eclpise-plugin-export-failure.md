@@ -5,10 +5,6 @@ category: [编程语言]
 tags: [eclipse, plugin, export, java]
 ---
 
-插件没有效果  
-查看log  
-classdefnotfound
-
 将eclipse插件导出为`Deployed plug-ins and fragments`时失败并提示：  
 ![](/image/eclipse-plugin-export-fail-0.jpg)  
 

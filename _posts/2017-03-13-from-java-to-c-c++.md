@@ -16,7 +16,7 @@ JAVA相对于C++来说是后起之秀，在很多方面（比如OOP、丰富的�
 
 ##### OO无关部分
 
-[内存管理：内存、堆、栈、地址、指针、引用、值]()  
+[内存管理：内存、堆、栈、地址、指针、引用、值](http://windmissing.github.io/%E4%BB%8Ejava%E5%88%B0c++/2017-03/java-to-cpp-on-memory.html)  
 参考链接：[地址、内存、堆、栈总结](http://windmissing.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/2012-01/address-memory-heap-stack.html)  
   
 [字节对齐]()  
@@ -27,6 +27,7 @@ typedef和#define
 类型转换  
 头文件（哪些放头文件，头文件包含导致的重定义，头文件包含导致的符号冲突）  
 生命周期
+关键字：const, static
 
 ##### OO相关部分
 
@@ -62,7 +63,7 @@ C++追求的是速度，而JAVA追求的是安全。
 JAVA在借鉴C++时，抛弃了那些不安全的内容（比如指针操作），对于不能抛弃的内容则采取了以较为安全的方法实现
 
 1.内存管理  
-[C++内存管理]()  
+[C++内存管理](http://windmissing.github.io/%E4%BB%8Ejava%E5%88%B0c++/2017-03/java-to-cpp-on-memory.html)  
 [JAVA内存管理]()
 
 #### 参考文章
