@@ -56,6 +56,22 @@ tags: []
 #include<iostream>
 using namespace std;
 
+int main()
+{
+    int n = 0; //值
+    int *p = n; //指针
+    int &rn = n; //引用
+    
+    cout<<n<<' '<<&n<<endl; //n的值和地址
+    cout<<p<<' '<<&p<<' '<<*p<<endl; //p的值、地址和指向的地址的值
+    cout<<rn<<' '<<&rn<<endl; //rn的值和地址
+}
+```
+
+```c++
+#include<iostream>
+using namespace std;
+
 class A
 {};
 

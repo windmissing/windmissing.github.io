@@ -32,3 +32,12 @@ C = ctrl, M = alt
 |替换|M-%|
 |删除到行尾|C-k|
 |粘贴|M-y|
+
+#### git操作
+
+|||
+|---|---|
+|打开git控制台|A+x, git status|
+|add files|a|
+|commit with comments|ci|
+|save comments and commit|C + c + c|
