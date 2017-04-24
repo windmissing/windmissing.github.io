@@ -9,6 +9,7 @@ tags: []
 
 foreach语法，不必创建int变量去对由访问项构成的序列进行计数，foreach自动产生每一项。
 
+<!-- more -->
 ---
 
 #### goto
