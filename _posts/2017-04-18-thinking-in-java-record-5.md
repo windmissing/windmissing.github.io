@@ -147,5 +147,92 @@ JVM会监视系统状态，如果所有对象都稳定，垃圾回收器的效�
 
 ---
 
-#### 指定初始化
+#### 自动初始化
 
+在定义类成员变量的地方为其赋值
+
+```java
+public class initValue {
+    boolean bool = true;
+    char ch = 'x';
+    int i; //没有指定初值则初始化为0
+}
+```
+
+##### 各种初始化的顺序
+静态成员的初始化  
+自动初始化（以定义为顺序）（即使散布于方法定义之间）。  
+构造函数初始化  
+
+---
+
+#### 初始化块
+
+```java
+public class Spoon {
+    static int i;
+    //静态块
+    static {
+        i = 47;
+    }
+    //非静态块
+    int j;
+    {
+        j = 48;
+        print("j is inited");
+    }
+}
+
+初始化块也在构造函数之前执行
+```
+
+---
+
+#### 数组初始化
+
+ - 声明的两种方式
+
+```java
+int[] a;  //a只是个引用
+int a2[];
+```
+
+编译器不允许指定数组的大小。  
+要给数组创建空间，必须写初始化表达式。  
+
+```java
+int [] a = new int[5];
+int [] a = new int[](1, 3, 4, 5,); //最后一个,可写可不写
+```
+
+---
+
+#### 可变参数
+
+##### 声明带可变参数的函数
+
+```java
+void func1(Object[] args) //以前的写法
+void func2(Object[]... args)
+void func3(int required, String... trailing) //当具有可选的尾随参数时，这一特性会很有用
+
+//重载
+void func(Character... args)
+void func(Integer... args)
+```
+
+##### 使用带可变参数的函数
+
+```java
+//常规调用方法
+func1(new Object[]{"1", "2", "3"});
+func2(new Object[]{"1", "2", "3"});
+//自动转型为数组
+func3(1, "1");
+func3(0);
+//当没有参数时，使用重载的可变参函数会有歧义
+func();
+```
+
+**只在重载方法的一个版本上使用可变参数列表，或者压根不用它。**  
+[自动包装机制](http://blog.csdn.net/caster_saber/article/details/50950466)
