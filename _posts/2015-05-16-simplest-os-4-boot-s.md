@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "1.最简单的操作系统（四）boot.S"
-category: 操作系统
+category: 运行自己的操作系统
 tags: [操作系统]
 ---
 
