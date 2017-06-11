@@ -1,0 +1,35 @@
+@startuml
+
+interface Processor {
+    + Object process(Object)
+}
+
+class FilterAdapter {
+    + Waveform process(object)
+}
+FilterAdapter .up.|> Processor
+FilterAdapter "1" -right-o "1" FilterProcessor
+
+class FilterProcessor {
+    + Waveform process(Waveform)
+}
+
+class Apply {
+    + apply(Processor)
+}
+class Apply .left.> Processor
+
+
+class LowPass {
+    + Waveform process(Waveform)
+}
+LowPass -up-|> FilterProcessor
+class HighPass {
+    + Waveform process(Waveform)
+}
+HighPass -up-|> FilterProcessor
+class BandPass {
+    + Waveform process(Waveform)
+}
+BandPass -up-|> FilterProcessor
+@enduml

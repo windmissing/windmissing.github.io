@@ -1,0 +1,40 @@
+@startuml
+
+interface Service {
+    + method1();
+    + method2();
+}
+
+class Implementation1 {
+    + method1();
+    + method2();
+}
+Implementation1 .up.|> Service
+
+class Implementation2 {
+    + method1();
+    + method2();
+}
+Implementation2 .up.|> Service
+
+interface ServiceFactory {
+    + Service getService();
+}
+ServiceFactory .left.> Service
+
+class Implementation1Factory {
+    + Service getService();
+}
+Implementation1Factory .up.|> ServiceFactory
+
+class Implementation2Factory {
+    + Service getService();
+}
+Implementation2Factory .up.|> ServiceFactory
+
+
+class Factories {
+    + apply(Processor)
+}
+Factories .left.> ServiceFactory
+@enduml

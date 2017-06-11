@@ -1,0 +1,26 @@
+@startuml
+
+class Processor {
+    + Object process(Object)
+}
+
+class Upcase {
+    + String process(Object)
+}
+class Upcase -up-|> Processor
+
+class Downcase {
+    + String process(Object)
+}
+class Downcase -up-|> Processor
+
+class Splitter {
+    + String process(Object)
+}
+class Splitter -up-|> Processor
+
+class Apply {
+    + apply(Processor)
+}
+class Apply .> Processor
+@enduml

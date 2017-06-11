@@ -1,0 +1,49 @@
+@startuml
+
+interface Processor {
+    + Object process(Object)
+}
+
+abstract StringProcessor {
+    + abstract String process(Object)
+}
+StringProcessor ..left..|> Processor
+
+class Upcase {
+    + String process(Object)
+}
+class Upcase -up-|> StringProcessor
+
+class Downcase {
+    + String process(Object)
+}
+class Downcase -up-|> StringProcessor
+
+class Splitter {
+    + String process(Object)
+}
+class Splitter -up-|> StringProcessor
+
+class Apply {
+    + apply(Processor)
+}
+class Apply .down.> Processor
+
+class Filter {
+    + Waveform process(Waveform)
+}
+Filter .right.|> Processor
+
+class LowPass {
+    + Waveform process(Waveform)
+}
+LowPass -up-|> Filter
+class HighPass {
+    + Waveform process(Waveform)
+}
+HighPass -up-|> Filter
+class BandPass {
+    + Waveform process(Waveform)
+}
+BandPass -up-|> Filter
+@enduml
