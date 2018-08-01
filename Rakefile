@@ -6,7 +6,7 @@ require 'time'
 SOURCE = "."
 CONFIG = {
   'layouts' => File.join(SOURCE, "_layouts"),
-  'posts' => File.join(SOURCE, "_posts/*"),
+  'posts' => File.join(SOURCE, "_posts"),
   'post_ext' => "md",
 }
 
