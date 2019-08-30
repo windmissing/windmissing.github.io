@@ -8,3 +8,4 @@ tags: []
 | | |
 ---|---
 MAC | Medium Access Control
+TB  | transport blocks
