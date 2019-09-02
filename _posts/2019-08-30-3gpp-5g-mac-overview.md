@@ -40,7 +40,7 @@ MAC需要PHY提供服务：
 # MAC层的功能
 
 > [38.321 4.4]
-> - mapping between logical channels and transport channels（[逻辑信道与物理信道的映射](http://windmissing.github.io/5g/2019-09/mapping-between-logical-channels-and-transport-channels.html)）
+> - mapping between logical channels and transport channels（[逻辑信道与传输信道的映射](http://windmissing.github.io/5g/2019-09/mapping-between-logical-channels-and-transport-channels.html)）
 > - multiplexing of MAC SDUs from one or different logicals channels onto transport blocks(TB) to be delivered to the physical layer on transport channels（把逻辑信道的MAC SDU装入一个TB中通过物理层发出去）
 > - demultiplexing of MAC SDUs to one or different logical channels from transport blocks (TB) delivered from the physical layer on transport channels（把来自物理层的TB解析到逻辑信道中）
 > - scheduling information reporting（调度信息上报）
