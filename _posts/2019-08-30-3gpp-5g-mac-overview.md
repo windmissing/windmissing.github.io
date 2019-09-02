@@ -10,9 +10,10 @@ MAC即Medium Access Control，是3GPP制定的通信协议标准。
 MAC位于接入网空口协议第二层。
 
 ![](\images\2019\1.png)
+
 *note1:图中有4处IP，其代表含义不同。位于UE和NG最上层的IP代表用户数据包。位置NG协议第二层的IP代码TCP/IP协议。*
 
-note2:gNB中左右两侧分别是两套协议。这两套协议同一行没有对应关系。*
+*note2:gNB中左右两侧分别是两套协议。这两套协议同一行没有对应关系。*
 
 <!-- more -->
 
