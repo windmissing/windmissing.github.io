@@ -40,18 +40,13 @@ MAC需要PHY提供服务：
 # MAC层的功能
 
 > [38.321 4.4]
-> - mapping between logical channels and transport channels（逻辑信道与物理信道的映射）
+> - mapping between logical channels and transport channels（[逻辑信道与物理信道的映射](http://windmissing.github.io/5g/2019-09/mapping-between-logical-channels-and-transport-channels.html)）
 > - multiplexing of MAC SDUs from one or different logicals channels onto transport blocks(TB) to be delivered to the physical layer on transport channels（把逻辑信道的MAC SDU装入一个TB中通过物理层发出去）
-> demultiplexing of MAC SDUs to one or different logical channels from transport blocks (TB) delivered from the physical layer on transport channels（把来自物理层的TB解析到逻辑信道中）
-> scheduling information reporting（调度信息上报）
-> error correction through HARQ（通过HARQ自动纠错）
-> logical channel prioritisation（按照逻辑信道的优先级传送数据）
+> - demultiplexing of MAC SDUs to one or different logical channels from transport blocks (TB) delivered from the physical layer on transport channels（把来自物理层的TB解析到逻辑信道中）
+> - scheduling information reporting（调度信息上报）
+> - error correction through HARQ（通过HARQ自动纠错）
+> - logical channel prioritisation（按照逻辑信道的优先级传送数据）
 
-
-什么是逻辑信道，RLC使用
-什么是物理信道，L1使用
-为什么要映射
-怎么映射
 
 ## 组装TB
 
