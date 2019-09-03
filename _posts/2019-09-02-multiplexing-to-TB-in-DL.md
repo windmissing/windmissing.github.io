@@ -5,9 +5,11 @@ category: [5G]
 tags: [MAC]
 ---
 
-[3GPP 5G MAC overview](http://windmissing.github.io/5g/2019-08/3gpp-5g-mac-overview.html)中提到，MAC层的第二个功能是`multiplexing of MAC SDUs from one or different logicals channels onto transport blocks(TB) to be delivered to the physical layer on transport channels`，即将来自一个或不同逻辑信道的MAC SDU复用到传输块（TB）上，以便传输到传输信道上的物理层。
+[3GPP 5G MAC overview](http://windmissing.github.io/5g/2019-08/3gpp-5g-mac-overview.html)中提到，MAC层的第二个功能是
 
-位于接入网空口协议第二层，它的其中一个功能就是`mapping between logical channels and transport channels`，即逻辑信道与传输信道的映射。
+>[38.321 4.3] multiplexing of MAC SDUs from one or different logicals channels onto transport blocks(TB) to be delivered to the physical layer on transport channels
+
+即将来自一个或不同逻辑信道的MAC SDU复用到传输块（TB）上，以便传输到传输信道上的物理层。
 
 <!-- more -->
 

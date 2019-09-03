@@ -5,7 +5,11 @@ category: [5G]
 tags: [MAC]
 ---
 
-[3GPP 5G MAC overview](http://windmissing.github.io/5g/2019-08/3gpp-5g-mac-overview.html)中提到，MAC层位于接入网空口协议第二层，它的其中一个功能就是`mapping between logical channels and transport channels`，即逻辑信道与传输信道的映射。
+[3GPP 5G MAC overview](http://windmissing.github.io/5g/2019-08/3gpp-5g-mac-overview.html)中提到，MAC层位于接入网空口协议第二层，它的其中一个功能就是
+
+>[38.321 4.3]mapping between logical channels and transport channels
+
+即逻辑信道与传输信道的映射。
 
 ![](\images\2019\3.png)
 
