@@ -6,7 +6,7 @@ layout: default
   <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
   {% if post.content contains "<!-- more -->" %}
   {{ post.content | split:'<!-- more -->' | first }}
-  <font color = "grey"><a href="{{ post.url }}">-- more --</a></font>
+  <a href="{{ post.url }}">-- more --</a>
   {% else %}
   {{ post.content | strip_html | truncate:50 }}
   {% endif %}
@@ -37,6 +37,7 @@ layout: default
   </div>
 </div>
 <aside class="col-md-3 visible-lg visible-md">
+  <div id="code" class="qrcode visible-lg"></div>
   {% include search.html %}
   {% include categories.html %}
   {% include blogroll.html %}
