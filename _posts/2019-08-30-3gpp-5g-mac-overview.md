@@ -41,18 +41,14 @@ MAC需要PHY提供服务：
 
 > [38.321 4.4]
 > - mapping between logical channels and transport channels（[逻辑信道与传输信道的映射](http://windmissing.github.io/5g/2019-09/mapping-between-logical-channels-and-transport-channels.html)）
-> - multiplexing of MAC SDUs from one or different logicals channels onto transport blocks(TB) to be delivered to the physical layer on transport channels（把逻辑信道的MAC SDU装入一个TB中通过物理层发出去）
-> - demultiplexing of MAC SDUs to one or different logical channels from transport blocks (TB) delivered from the physical layer on transport channels（把来自物理层的TB解析到逻辑信道中）
+> - multiplexing of MAC SDUs from one or different logicals channels onto transport blocks(TB) to be delivered to the physical layer on transport channels（将来自一个或不同逻辑信道的MAC SDU复用到传输块（TB）上，以便传输到传输信道上的物理层）
+> - demultiplexing of MAC SDUs to one or different logical channels from transport blocks (TB) delivered from the physical layer on transport channels（将MAC SDU从传输信道上的物理层传送的传输块（TB）解复用到一个或不同的逻辑信道）
 > - scheduling information reporting（调度信息上报）
 > - error correction through HARQ（通过HARQ自动纠错）
 > - logical channel prioritisation（按照逻辑信道的优先级传送数据）
 
 
-## 组装TB
 
-从逻辑信道收数据
-组装到TB
-选择物理信道发出
 
 ## 拆分TB
 

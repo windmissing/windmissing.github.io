@@ -59,10 +59,10 @@ MAC层为RLC层提供的数据传输服务是基于传输信道的。
 
 根据图上所示，可以有以下总结：
 
-逻辑信道PCCH和BCCH都有专门的传输信道与之对应。
+- 逻辑信道PCCH和BCCH都有专门的传输信道与之对应。
 
-逻辑信道CCCH、DCCH、DTCH区分上行和下行。其上、下行分别对应传输信道的DL-SCH、UL-SCH。
+- 逻辑信道CCCH、DCCH、DTCH区分上行和下行。其上、下行分别对应传输信道的DL-SCH、UL-SCH。
 
-BCCH也可以使用DL-SCH
+- BCCH也可以使用DL-SCH
 
 # 为什么需要逻辑信道向传输信道的映射？
