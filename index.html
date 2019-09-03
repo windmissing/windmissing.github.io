@@ -6,6 +6,7 @@ layout: default
   <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
   {% if post.content contains "<!-- more -->" %}
   {{ post.content | split:'<!-- more -->' | first }}
+  <a href="{{ post.url }}">-- more --</a>
   {% else %}
   {{ post.content | strip_html | truncate:50 }}
   {% endif %}
@@ -38,6 +39,5 @@ layout: default
 <aside class="col-md-3 visible-lg visible-md">
   {% include search.html %}
   {% include categories.html %}
-  {% include recently_comments.html %}
   {% include blogroll.html %}
 </aside>
