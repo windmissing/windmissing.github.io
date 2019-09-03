@@ -43,11 +43,6 @@ comments:
 search:
     tinysou:
         engineKey: 
-
-# 网站统计
-analytics:
-    liangzi : 3608735                             # 百度统
-
     
 # Google Analytics
 google_analytics: UA-146915268-1
