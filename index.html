@@ -6,6 +6,7 @@ layout: default
   <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
   {% if post.content contains "<!-- more -->" %}
   {{ post.content | split:'<!-- more -->' | first }}
+  <font color = "grey"><a href="{{ post.url }}">-- more --</a></font>
   {% else %}
   {{ post.content | strip_html | truncate:50 }}
   {% endif %}
