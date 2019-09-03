@@ -7,6 +7,7 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
   })();
+{% endif %}
 </script>
 
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258962830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258962830%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -18,7 +19,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', {{site.analytics.google_analytics}}, 'auto');
+  ga('create', "{{site.analytics.google_analytics}", 'auto');
   ga('send', 'pageview');
 </script>
 {% endif %}

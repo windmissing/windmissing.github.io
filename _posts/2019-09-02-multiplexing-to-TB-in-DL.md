@@ -9,6 +9,8 @@ tags: [MAC]
 
 位于接入网空口协议第二层，它的其中一个功能就是`mapping between logical channels and transport channels`，即逻辑信道与传输信道的映射。
 
+<!-- more -->
+
 ## 组装TB
 
 从逻辑信道收数据
