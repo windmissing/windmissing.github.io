@@ -27,21 +27,42 @@ demultiplexing of MAC SDUs to one or different logical channels from transport b
 
 ![下行](\images\2019\6.png)
 
-上图为下行方向，位于GNB侧的MAC层需要把MAC SDU multiplexing到TB。位于UE侧的MAC层则需要把把MAC SDU从TB multiplexing出来。
+上图为下行方向，GNB把数据一层一层封装好发给UE，UE收到数据后一层一层地解析，最后还原出原始数据。
+
+具体对应到MAC层，位于GNB侧的MAC层需要把MAC SDU multiplexing到TB。位于UE侧的MAC层则需要把把MAC SDU从TB demultiplexing出来。
 
 3GPP规定UE->gNB->核心网的数据流向称为上行。
 
 ![上行](\images\2019\7.png)
 
-上图为上行方向，MAC层要做的事情正常相反。GNB侧的MAC层的工作是demultiplexing，而UE侧的MAC层的工作是multiplexing.
+上图为上行方向，MAC层要做的事情正好相反。GNB侧的MAC层的工作是demultiplexing，而UE侧的MAC层的工作是multiplexing.
 
-# multiplexing
+38.321里只规则了UE侧如果multiplexing和demultiplexing。而没有规定GNB侧该如何工作。因此后面都是从UE的角度来说明multiplexing和demultiplexing的。
 
-##  从逻辑信道收数据
+# UE multiplexing in UL
+
+从上文可知，只有在上行方向，即UE要向gNB发数据时，MAC层才需要做multiplexing的工作。
+
+UE肯定不能随便向GNB发数据的，它的行为需要GNB的认可，GNB同意了（给UE发UL grant），UE才能根据UL　grant的要求发数据。
+![](\images\2019\8.png)
+
+multiplexing发生在收到UL grant之后，发送UL data之前。它要求MAC层从上层（RLC）的逻辑信道取数据，把多个逻辑信道的数据复用到一个TB中。
+
+## 选择逻辑信道
+
+> [5.4.3.1.2]Selection of logical channels  
+> The MAC entity shall, when a new transmission is performed:  
+1>	select the logical channels for each UL grant that satisfy all the following conditions:  
+...
+
+为了避免一开始就卷入比较复杂的细节中，就把conditions的具体内容省略了，详见[TODO]。
+
+简单来说，根据上图可知，UE一定是在收到某个SR之后，才能根据这个SR提供的信道发送上行数据。SR里面包含了gNB对上行数据的要求，包括SCS
+
 ## 组装到TB
-## 选择物理信道发出
 
-# demultiplexing
+
+# UE demultiplexing in DL
 
 ##  从传输信道收数据
 ## 解TB

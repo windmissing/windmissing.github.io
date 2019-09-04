@@ -1,0 +1,5 @@
+@startuml
+UE -> GNB: SR, apply for UL
+GNB -> UE: UL grant, agree for UL
+UE -> GNB: UL data
+@enduml
