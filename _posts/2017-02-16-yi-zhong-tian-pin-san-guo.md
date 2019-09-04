@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "为什么“易中天品三国”那么受欢迎"
-category: [其它]
+category: [随便想想]
 tags: []
 ---
 

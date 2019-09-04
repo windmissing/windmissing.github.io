@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Jekyll theme效果"
 category: demo
 tags: [test, jekyll, welcome]
 ---
@@ -25,7 +25,15 @@ tags: [test, jekyll, welcome]
 
 - - -
 
-测试行代码 `_post`
+这是一个 `代码块`
+
+这是一个 **粗体**
+
+这是一个 *斜体*
+
+    这是一个代码段
+
+> 这是一个引用
 
 测试段落代码
 
@@ -47,4 +55,3 @@ int main(int argc, char **argv)
 |row2text1|row2text2|row2text3|row2text4
 |row3text1|row3text2|row3text3|row3text4
 |row4text1|row4text2|row4text3|row4text4
-
