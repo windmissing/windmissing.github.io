@@ -7,7 +7,7 @@ tags: [MAC]
 
 MAC即Medium Access Control，是3GPP制定的通信协议标准。
 
-MAC位于接入网空口协议第二层。
+空口协议是UE与GNB之间进行交互的协议。MAC位于接入网空口协议第二层。
 
 ![](\images\2019\1.png)
 
