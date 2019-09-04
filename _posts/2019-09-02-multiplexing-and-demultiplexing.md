@@ -17,6 +17,8 @@ demultiplexing of MAC SDUs to one or different logical channels from transport b
 
 将MAC SDU从传输信道上的物理层传送的传输块（TB）解复用到一个或不同的逻辑信道
 
+![](https://www.tech-invite.com/3m38/img/tinv-38-321-NR-MAC-arch.gif)
+
 <!-- more -->
 
 # 上行与下行
@@ -57,9 +59,15 @@ multiplexing发生在收到UL grant之后，发送UL data之前。它要求MAC�
 
 为了避免一开始就卷入比较复杂的细节中，就把conditions的具体内容省略了，详见[TODO]。
 
-简单来说，根据上图可知，UE一定是在收到某个SR之后，才能根据这个SR提供的信道发送上行数据。SR里面包含了gNB对上行数据的要求，包括SCS
+简单来说，根据上图可知，UE一定是在收到某个SR之后，才能根据这个SR提供的信道发送上行数据。SR里面包含了gNB对上行数据的逻辑信道的要求，包括SCS、Serving Cell、grant type、duration等。只有满足这些要求的逻辑信道的数据才能基于这次的Grant发送。
 
 ## 组装到TB
+
+![](http://www.techplayon.com/wp-content/uploads/2017/09/NR-RLC-730x312.png)
+
+这个图也是来自网上，忽略SDAP层和PDCP层。仅关注RLC层和MAC层。
+
+通过逻辑信道收到的是RLC PDU，即加过RLC SDU + RLC header。RLCPDU即MAC SDU。MAC SDU + MAC header又构成了MAC PDU。关于PDU与SDU见[TODO]。
 
 
 # UE demultiplexing in DL
