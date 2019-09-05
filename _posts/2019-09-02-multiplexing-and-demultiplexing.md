@@ -61,7 +61,7 @@ multiplexing发生在收到UL grant之后，发送UL data之前。它要求MAC�
 
 简单来说，根据上图可知，UE一定是在收到某个SR之后，才能根据这个SR提供的信道发送上行数据。SR里面包含了gNB对上行数据的逻辑信道的要求，包括SCS、Serving Cell、grant type、duration等。只有满足这些要求的逻辑信道的数据才能基于这次的Grant发送。
 
-## 组装到TB
+## 复用到TB
 
 ![](http://www.techplayon.com/wp-content/uploads/2017/09/NR-RLC-730x312.png)
 
