@@ -9,7 +9,6 @@ tags: [C++, virtual]
 
 ![](\images\2019\10.png)
 
-
 # 完整代码
 
 ```c++
