@@ -31,16 +31,16 @@ sonson::f()
 sonson::f()
 ```
 
-由此可见，只要在基类里写了virtual，派生类里写不写都没有影响的。
+由此可见，只要在基类里写了virtual，派生类里写不写都没有影响的。最后都起到多态的效果。
 
 
 # 其它测试
 
-[virtual关键字在子类]()
+[virtual关键字在子类](http://windmissing.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/2019-09/virtual-function-analyse-2.html)
 
-[析构函数的virtual在子类]()
+[析构函数的virtual在子类](http://windmissing.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/2019-09/virtual-function-analyse-3.html)
 
-[间接调用虚函数]()
+[间接调用虚函数](http://windmissing.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/2019-09/virtual-function-analyse-4.html)
 
 # 完整代码
 ```c++
