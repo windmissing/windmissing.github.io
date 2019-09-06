@@ -69,7 +69,7 @@ multiplexing发生在收到UL grant之后，发送UL data之前。它要求MAC�
 
 通过逻辑信道收到的是RLC PDU，即加过RLC SDU + RLC header。RLCPDU即MAC SDU。MAC SDU + MAC header又构成了MAC PDU。关于PDU与SDU见[TODO]。
 
-
+multiplexing的过程也就是分配资源的过程，详见TODO。
 # UE demultiplexing in DL
 
 ##  从传输信道收数据
