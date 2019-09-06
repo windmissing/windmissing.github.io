@@ -1,0 +1,14 @@
+@startuml
+class father {
+ + ~father()
+}
+class son {
+ + virtual ~son()
+}
+
+class sonson {
+ + ~sonson()
+}
+class son -up-|> father
+class sonson -up-|> son
+@enduml
