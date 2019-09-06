@@ -1,0 +1,15 @@
+@startuml
+class father {
+ + void A()
+ + void B()
+}
+class son {
+ + virtual void B()
+}
+
+class sonson {
+ +void B()
+}
+class son -up-|> father
+class sonson -up-|> son
+@enduml
