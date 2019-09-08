@@ -67,11 +67,24 @@ multiplexing发生在收到UL grant之后，发送UL data之前。它要求MAC�
 
 这个图也是来自网上，忽略SDAP层和PDCP层。仅关注RLC层和MAC层。
 
-通过逻辑信道收到的是RLC PDU，即加过RLC SDU + RLC header。RLCPDU即MAC SDU。MAC SDU + MAC header又构成了MAC PDU。关于PDU与SDU见[TODO]。
+通过逻辑信道收到的是RLC PDU，即RLC SDU + RLC header。
 
-multiplexing的过程也就是分配资源的过程，详见TODO。
+整个RLC PDU作为一个MAC SDU。
+
+MAC SDU + MAC sub-header又构成了MAC sub-PDU。
+
+关于PDU与SDU见[TODO]。
+
+由MAC SDU构成的MAC sub-PDU只是一种MAC sub-PDU。还有MAC CE（TODO）、padding也可以与MAC Sub-header一起构成MAC sub-PDU. 以上的这些MAC sub-PDU按照一定的规则放在一起就构成了MAC PDU。详见MAC PDU(TODO).
+
+最终由PHY层的TB来承载这个MAC PDU。
+
 # UE demultiplexing in DL
 
 ##  从传输信道收数据
+
+PHY层使用TB来承载MAC层的数据。因此PHY层收到TB后，MAC要解析这个TB。
+
+
 ## 解TB
 ## 选择逻辑信道发出
