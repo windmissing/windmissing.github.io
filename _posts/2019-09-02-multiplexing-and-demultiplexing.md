@@ -85,6 +85,25 @@ MAC SDU + MAC sub-header又构成了MAC sub-PDU。
 
 PHY层使用TB来承载MAC层的数据。因此PHY层收到TB后，MAC要解析这个TB。
 
+>[338.321 6.1.2]  
+> A MAC PDU consists of one or more MAC subPDUs. Each MAC subPDU consists of one of the following:
+-	A MAC subheader only (including padding);
+-	A MAC subheader and a MAC SDU;
+-	A MAC subheader and a MAC CE;
+-	A MAC subheader and padding.
 
-## 解TB
-## 选择逻辑信道发出
+MAC层对不同类型的MAC sub-PDU做不同的处理。
+
+`A MAC subheader only`和`A MAC subheader and padding`将会被抛弃。
+
+`A MAC subheader and a MAC CE`包含了MAC层的控制信息。MAC层的操作与MACCE的内容有关。见（TODO）
+
+`A MAC subheader and a MAC SDU`中的MAC SDU被提取出来交给上层RLC。
+
+## demultiplexing
+
+MAC层根据MAC sub-PDU的MAC subheader来区分MAC sub-PDU的类型。
+
+MAC subheader的格式本身也有多种。不管哪种MAC subheader，其bit2 - bit7都是固定的LCID字段。
+
+如果这个字段的值为[1, 32]，则说明它是MAC SDU的subheader(见38.321 表6.2.1-2)，且LCID是RLC PDU的logcical channel ID. MAC层根据这个字段把MAC PDU效果正确的logical channel。
