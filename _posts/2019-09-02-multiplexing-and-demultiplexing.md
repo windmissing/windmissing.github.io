@@ -81,6 +81,8 @@ MAC SDU + MAC sub-header又构成了MAC sub-PDU。
 
 # UE demultiplexing in DL
 
+与UE multiplexing in UL相反，只有在下行方向，即UE从gNB收数据时，MAC层才需要做demultiplexing的工作。
+
 ##  从传输信道收数据
 
 PHY层使用TB来承载MAC层的数据。因此PHY层收到TB后，MAC要解析这个TB。
