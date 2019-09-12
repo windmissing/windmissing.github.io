@@ -45,24 +45,6 @@ demultiplexing of MAC SDUs to one or different logical channels from transport b
 
 从上文可知，只有在上行方向，即UE要向gNB发数据时，MAC层才需要做multiplexing的工作。
 
-UE肯定不能随便向GNB发数据的，它的行为需要GNB的认可，GNB同意了（给UE发UL grant），UE才能根据UL　grant的要求发数据。
-![](\images\2019\8.png)
-
-multiplexing发生在收到UL grant之后，发送UL data之前。它要求MAC层从上层（RLC）的逻辑信道取数据，把多个逻辑信道的数据复用到一个TB中。
-
-## 选择逻辑信道
-
-> [5.4.3.1.2]Selection of logical channels  
-> The MAC entity shall, when a new transmission is performed:  
-1>	select the logical channels for each UL grant that satisfy all the following conditions:  
-...
-
-为了避免一开始就卷入比较复杂的细节中，就把conditions的具体内容省略了，详见[TODO]。
-
-简单来说，根据上图可知，UE一定是在收到某个SR之后，才能根据这个SR提供的信道发送上行数据。SR里面包含了gNB对上行数据的逻辑信道的要求，包括SCS、Serving Cell、grant type、duration等。只有满足这些要求的逻辑信道的数据才能基于这次的Grant发送。
-
-## 复用到TB
-
 ![](http://www.techplayon.com/wp-content/uploads/2017/09/NR-RLC-730x312.png)
 
 这个图也是来自网上，忽略SDAP层和PDCP层。仅关注RLC层和MAC层。
@@ -107,5 +89,7 @@ MAC层对不同类型的MAC sub-PDU做不同的处理。
 MAC层根据MAC sub-PDU的MAC subheader来区分MAC sub-PDU的类型。
 
 MAC subheader的格式本身也有多种。不管哪种MAC subheader，其bit2 - bit7都是固定的LCID字段。
+
+![](http://windmissing.github.io/images/2019/13.png)
 
 如果这个字段的值为[1, 32]，则说明它是MAC SDU的subheader(见38.321 表6.2.1-2)，且LCID是RLC PDU的logcical channel ID. MAC层根据这个字段把MAC PDU效果正确的logical channel。
