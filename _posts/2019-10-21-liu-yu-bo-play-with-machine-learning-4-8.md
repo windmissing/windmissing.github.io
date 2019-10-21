@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "4-7 scikit-learn中的Scaler"
+title:  "4-8 scikit-learn中的Scaler"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
