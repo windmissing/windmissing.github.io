@@ -25,16 +25,16 @@ digits的内容如下：
 输入：digits.keys()  
 输出：dict_keys(['data', 'target', 'target_names', 'images', 'DESCR'])
 
-输入：print(digits.DESCR)
+输入：print(digits.DESCR)  
 输出：digits的官方说明
 
-输入：digits.data.shape()
+输入：digits.data.shape()  
 输出：(1797, 64)
 
-输入：digits.target.shape()
+输入：digits.target.shape()  
 输出：(1797,)
 
-输入：digits.target_names
+输入：digits.target_names  
 输出：array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 <!-- more -->
