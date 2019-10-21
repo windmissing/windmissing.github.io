@@ -91,7 +91,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y)
 my_Knn_clf = kNNClassifier(k = 3)    # kNNClassifier在上一节实现
 my_Knn_clf.fit(X_train, y_train)
 y_predict = my_Knn_clf.predict(X_test)
-sum(y_predict == y_test) / len(y_test)
+accuracy = sum(y_predict == y_test) / len(y_test)
 ```
 
 # sklearn中的train_test_split
