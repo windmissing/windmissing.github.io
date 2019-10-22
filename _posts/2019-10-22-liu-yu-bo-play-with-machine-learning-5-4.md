@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "5-3 简单线性回归的实现"
+title:  "5-4 参数计算向量化"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
@@ -9,63 +9,22 @@ tags: []
 > 本文只是对课程内容做笔记，建议读者看原视频学习  
 > 因为看本文只能知道一些知识点，但看原视频明理解这些知识点  
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.array([1., 2., 3., 4., 5.])
-y = np.array([1., 3., 2.
-
-plt.scatter(x, y)
-plt.axis([0, 6, 0, 6])
-plt.show()
-```
-
-输出结果：
-![](http://windmissing.github.io/images/2019/49.png)
+5-3中计算a, b的实现方法性能较低，使用向量化运算能提高性能  
+即把以下公式向量化：
+![](http://windmissing.github.io/images/2019/48.png)
 
 <!-- more -->
 
-# 在Notebook中计算a, b
+向量化的依据：
 
-![](http://windmissing.github.io/images/2019/48.png)
+![](http://windmissing.github.io/images/2019/52.png)
 
-## 计算a, b
-
-```python
-x_mean = np.mean(x)
-y_mean = np.mean(y)
-
-num = 0.0
-d = 0.0
-for x_i, y_i in zip(x, y):
-    num += (x_i - x_mean) * (y_i - y_mean)
-    d += (x_i - x_mean) ** 2
-
-a = num / d
-b = y_mean - a * x_mean
-```
-
-## 绘制结果
-
-```python
-y_hat = a * x + b
-
-plt.scatter(x, y)
-plt.plot(x, y_hat, color='r')
-plt.axis([0, 6, 0, 6])
-plt.show()
-```
-
-输出结果：
-![](http://windmissing.github.io/images/2019/50.png)
-
-# 把上过程封装成类
+# 向量化计算a, b
 
 ```python
 import numpy as np
 
-class SimpleLinearRegression1:
+class SimpleLinearRegression2:
     def __init__(self):
         """初始化Single Linear Regression模型"""
         self.a_ = None
@@ -79,11 +38,8 @@ class SimpleLinearRegression1:
         x_mean = np.mean(x_train)
         y_mean = np.mean(y_train)
 
-        num = 0.0
-        d = 0.0
-        for x_i, y_i in zip(x_train, y_train):
-            num += (x_i - x_mean) * (y_i - y_mean)
-            d += (x_i - x_mean) ** 2
+        num = (x_train - x_mean).dot(y_train - y_mean)
+        d = (x_train - x_mean).dot(x_train - x_mean)
 
         self.a_ = num / d
         self.b_ = y_mean - self.a_ * x_mean
@@ -99,26 +55,43 @@ class SimpleLinearRegression1:
         return self.a_ * x_single + self.b_
 
     def __repr__(self):
-        return "SimpleLinearRegression1()"
-```
-
-## 训练模型
-
-```python
-reg1 = SimpleLinearRegression1()
-reg1.fit(x, y)
+        return "SimpleLinearRegression2()"
 ```
 
 ## 绘制结果
 
 ```python
-y_hat1 = a * x + b
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([1., 2., 3., 4., 5.])
+y = np.array([1., 3., 2., 3., 5.])
+
+reg2 = SimpleLinearRegression2()
+reg2.fit(x, y)
+
+y_hat2 = reg2.predict(x)
 
 plt.scatter(x, y)
-plt.plot(x, y_hat1, color='r')
+plt.plot(x, y_hat2, color='r')
 plt.axis([0, 6, 0, 6])
 plt.show()
 ```
 
 输出结果：
 ![](http://windmissing.github.io/images/2019/50.png)
+
+# 向量化实现的性能测试
+
+```python
+m = 1000000
+big_x = np.random.random(size = m)
+big_y = big_x * 3.0 + 2.0 + np.random.normal(size = m)
+
+%timeit reg1.fit(big_x, big_y)    # reg1见5-4
+%timeit reg2.fit(big_x, big_y)
+```
+
+输出结果：  
+1.15 s ± 12.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)  
+25.2 ms ± 2.08 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)  
