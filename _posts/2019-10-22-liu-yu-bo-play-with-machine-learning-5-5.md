@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "5-4 参数计算向量化"
+title:  "5-5 衡量线性回归算法的指标"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
@@ -9,17 +9,34 @@ tags: []
 > 本文只是对课程内容做笔记，建议读者看原视频学习  
 > 因为看本文只能知道一些知识点，但看原视频明理解这些知识点  
 
-5-3中计算a, b的实现方法性能较低，使用向量化运算能提高性能  
-即把以下公式向量化：
-![](http://windmissing.github.io/images/2019/48.png)
+分类问题使用accuracy来评价分类结果。  
+回归问题怎样评价预测结果？
 
 <!-- more -->
 
-向量化的依据：
+# MSE RMSE MAE
 
-![](http://windmissing.github.io/images/2019/51.png)
+## 均方误差 MSE Mean Squared Error
 
-# 向量化计算a, b
+![](http://windmissing.github.io/images/2019/52.png)
+
+问题：量纲
+
+## 均方根误差 RMSE Root Mean Squared Error
+
+![](http://windmissing.github.io/images/2019/53.png)
+与MSE本质上是一样的  
+放大了最大的错误
+
+## 平均绝对误差 MAE Mean Absolute Error
+
+![](http://windmissing.github.io/images/2019/54.png)
+
+训练过程中，没有把这个函数定义成目标函数，是因为它不是处处可导。  
+但它仍可以用于评价算法  
+评价一个算法所使用的标准可以和训练时所用的标准不同
+
+# 编程实现三种
 
 ```python
 import numpy as np
