@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "6-4 梯度下降的向量化"
+title:  "6-5 梯度下降的向量化"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
@@ -10,6 +10,10 @@ tags: []
 > 因为看本文只能知道一些知识点，但看原视频明理解这些知识点  
 
 ![](http://windmissing.github.io/images/2019/81.png)
+
+<!-- more -->
+
+# 测试数据
 
 ```python
 import numpy as np
@@ -27,7 +31,7 @@ plt.show()
 
 ![](http://windmissing.github.io/images/2019/80.png)
 
-<!-- more -->
+
 
 # 向量化计算dJ
 
