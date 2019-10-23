@@ -123,9 +123,9 @@ class LinearRegression:
                 i_iter += 1
             return theta
 
-        X_b = np.hstack([np.ones((len(x), 1)), X])
+        X_b = np.hstack([np.ones((len(X_train), 1)), X_train])
         initial_theta = np.zeros(X_b.shape[1])
-        self._theta = gradient_descent(X_b, y, initial_theta, eta)
+        self._theta = gradient_descent(X_b, y_train, initial_theta, eta)
         self.interception_ = self._theta[0]
         self.coef_ = self._theta[1:]
         return self
