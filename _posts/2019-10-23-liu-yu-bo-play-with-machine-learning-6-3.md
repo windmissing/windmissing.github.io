@@ -14,5 +14,4 @@ tags: []
 
 <!-- more -->
 
-![](http://windmissing.github.io/images/2019/77.png)
-![](http://windmissing.github.io/images/2019/78.png)
+![](http://windmissing.github.io/images/2019/79.png)
