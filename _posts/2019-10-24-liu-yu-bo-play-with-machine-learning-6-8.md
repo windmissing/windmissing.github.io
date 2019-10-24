@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "6-7 调试梯度下降法"
+title:  "6-8 调试梯度下降法"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
