@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "7-1 使用梯度上升法求解主成分分析问题"
+title:  "7-2 使用梯度上升法求解主成分分析问题"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
