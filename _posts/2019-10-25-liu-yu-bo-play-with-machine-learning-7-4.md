@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "7-3 求数据的前N个主成分"
+title:  "7-4 求数据的前N个主成分"
 category: [liuyubo play with machine-learning]
 tags: []
 ---
