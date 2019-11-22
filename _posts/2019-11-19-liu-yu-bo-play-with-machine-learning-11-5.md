@@ -79,7 +79,7 @@ def plot_decision_boundary(model, axis):
 plot_decision_boundary(poly_svc, axis=[-1.5,2.5,-1.0,1.5])
 plt.scatter(X[y==0,0],X[y==0,1])
 plt.scatter(X[y==1,0],X[y==1,1])
-plt.show(
+plt.show()
 ```
 
 ![](http://windmissing.github.io/images/2019/235.png)

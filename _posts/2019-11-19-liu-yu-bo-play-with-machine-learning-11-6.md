@@ -11,74 +11,37 @@ tags: []
 
 ![](http://windmissing.github.io/images/2019/225.png)
 
+这是11-3中推导出来的公式。MVC本质上是这样的一个带条件的最优化问题。  
+在求解这个问题的过程要，要把公式变形：
+
+![](http://windmissing.github.io/images/2019/237.jpg)
+
+公式中红框标出来的部分，配合前面了两层累加符号，表示样本中任意两个x相乘。  
+所谓的给SVM增加多项式，就是：
+![](http://windmissing.github.io/images/2019/238.jpg)
+把x做一些变形得到x'，并且用x'代替公式中的x  
+核函数的思想是：有没有可能不显式地将x转换成x'，而是直接使用一个函数得到
+![](http://windmissing.github.io/images/2019/239.jpg)
+
 <!-- more -->
 
-# 使用多项式特征的SVM
+那么SVM的目标函数就可以写成：
+![](http://windmissing.github.io/images/2019/240.jpg)
 
-## 训练模型
+K函数 = Kernel function = Kernel trick  
+优点：1.节省了存储空间2.计算量变少  
 
-```python
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-from sklearn.svm import LinearSVC
-from sklearn.pipeline import Pipeline
+核函数本身不是SVM独有的技巧。只要算法转成了最优化问题，并且在求解最优化问题的过程中存在xi * xj或者类似这样的式子，都可以应该核函数技巧。  
 
-def PolynomialSVC(degree, C=1.0):
-    return Pipeline([
-        ('poly', PolynomialFeatures(degree=degree)),
-        ('std_scaler', StandardScaler()),
-        ('linearSVC', LinearSVC(C=C))
-    ])
+# 多项式核函数
 
-poly_svc = PolynomialSVC(degree=3)
-poly_svc.fit(X, y)
-```
+![](http://windmissing.github.io/images/2019/241.jpg)
+相当于给原来的x添加了二次项。  
+系数前面的常数项根号2不会影响模型的训练效果。  
 
-## 绘制模型
+多项式的核函数：
+![](http://windmissing.github.io/images/2019/243.jpg)
+下图是sklearn的SVM的文档，当核函数指定为poly时，degree相当于公式中的d，coef0相当于公式中的c
+![](http://windmissing.github.io/images/2019/242.jpg)
 
-```python
-def plot_decision_boundary(model, axis):
-    x0, x1 = np.meshgrid(
-        np.linspace(axis[0], axis[1], int((axis[1]-axis[0])*100)).reshape(-1,1),
-        np.linspace(axis[2], axis[3], int((axis[3]-axis[2])*100)).reshape(-1,1)
-    )
-    X_new = np.c_[x0.ravel(), x1.ravel()]
-
-    y_predict = model.predict(X_new)
-    zz = y_predict.reshape(x0.shape)
-
-    from matplotlib.colors import ListedColormap
-    custom_cmap = ListedColormap(['#EF9A9A','#FFF59D','#90CAF9'])
-
-    plt.contourf(x0, x1, zz, cmap=custom_cmap)
-
-plot_decision_boundary(poly_svc, axis=[-1.5,2.5,-1.0,1.5])
-plt.scatter(X[y==0,0],X[y==0,1])
-plt.scatter(X[y==1,0],X[y==1,1])
-plt.show(
-```
-
-![](http://windmissing.github.io/images/2019/235.png)
-
-# 使用多项式核函数的SVM
-
-```python
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
-
-def PolynomialKernelSVC(degree, C=1.0):
-    return Pipeline([
-        ('std_scaler', StandardScaler()),
-        ('kernelSVC', SVC(C=C, kernel='poly', degree=degree))
-    ])
-
-poly_kernel_svc = PolynomialKernelSVC(degree=3)
-poly_kernel_svc.fit(X, y)
-
-plot_decision_boundary(poly_kernel_svc, axis=[-1.5,2.5,-1.0,1.5])
-plt.scatter(X[y==0,0],X[y==0,1])
-plt.scatter(X[y==1,0],X[y==1,1])
-plt.show()
-```
-
-![](http://windmissing.github.io/images/2019/236.png)
+线性核函数：K(x, y) = x * y
