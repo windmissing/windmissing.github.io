@@ -22,6 +22,20 @@ sickit-learn中，决策树在节点上划分，在随机的特征子集上寻�
 使用13-1中的数据，但random_state=666  
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+
+X, y = datasets.make_moons(n_samples=500, noise=0.3, random_state=666)
+
+plt.scatter(X[y==0,0],X[y==0,1])
+plt.scatter(X[y==1,0],X[y==1,1])
+plt.show()
+```
+
+![](http://windmissing.github.io/images/2019/280.jpg)
+
+```python
 from sklearn.ensemble import RandomForestClassifier
 rf_clf = RandomForestClassifier(n_estimators=500, random_state=666, oob_score=True)
 rf_clf.fit(X, y)
