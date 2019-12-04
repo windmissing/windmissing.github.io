@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "Machine Learning自学路线"
+category: 
+tags: []
+---
+
+# 数学
+
+## 入门
+
+材料：《深度学习》 第一部分 应用数学与机器学习基础  
+作者：深度学习的三大开山鼻祖之一Yoshua Bengio  
+资源链接：https://pan.baidu.com/s/1GmmbqFewyCuEA7blXNC-7g 密码：6qqm  
+学习笔记：https://windmising.gitbook.io/mathematics-basic-for-ml/
+只需要看《深度学习》 第一部分，总结了机器学习需要的常用的数学基本概念和公式。不涉及推导细节，可直接记住结论。  
+
+## 初级
+
+系统地学习数学基础理论，相比于入门的“知其然”，现在要“知其所以然”  
+《现性代数》推荐：Strang
+
+## 中级
+
+材料：《CS229》配套的数学部分  
+作者：吴恩达  
+资源链接：https://pan.baidu.com/s/1NrCAW38C9lXFqPwqTlrVRA 密码：3k3m
+学习笔记：还没完全看懂  
+是对CS229课程的数学补充。将数学知识综合应用到机器学习算法中。经常一个公式里同时包含高数、现代、概率论。对数学要求比较高。
+
+# 算法
+
+## 入门
+
+材料：《python3入门机器学习 经典算法与应用》   
+作者：刘宇波    
+资源链接：https://coding.imooc.com/class/169.html   
+学习笔记：https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning   
+对常见机器学习算法做了基础的介绍。既有原理也有编程实践。还有一些对算法的思考。  
+在讲原理有少量的数学推导，数学基础不好也能看懂。  
+简单的算法配有python3实现，复杂算法使用slearn观察算法效果，对算法有直观印象。  
+
+材料：《机器学习实战》
+作者：Peter Harrington
+资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb  
+学习笔记：还没开始看  
+网上评价比较好，很多人推荐  
+
+## 初级
+
+材料：《统计学习方法》  
+作者：李航  
+资源链接：https://pan.baidu.com/s/1Mk_O71k-H8GHeaivWbzM-Q 密码：adep
+学习笔记：还没开始看  
+西瓜书，网上评价比较好，很多人推荐 
+
+材料：《机器学习》
+作者：周志华  
+资源链接：https://pan.baidu.com/s/1lJoQnWToonvBU6cYwjrRKg 密码：7rzl
+学习笔记：还没开始看  
+西瓜书，网上评价比较好，很多人推荐 
+
+## 中级
+
+材料：《CS229》
+作者：吴恩达  
+资源链接：https://pan.baidu.com/s/1MC_yWjcz_m5YoZFNBcsRSQ 密码：6rw6
+学习笔记：还没完全看懂
+与入门的算法介绍不同，这里不再详细说明算法的过程和作用，而是重点在算法的推导过程和背后的原理。  
+非常理论，不涉及实践。对数学要求较高。
+
+# 实践
+
+## 入门
+
+python、numpy
+
+材料：《python3入门机器学习 经典算法与应用》  
+作者：刘宇波   
+资源链接：https://coding.imooc.com/class/169.html  
+学习笔记：https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning  
+简单的算法配有python3实现，复杂算法使用slearn观察算法效果。
+用于熟悉python, numpy, sklearn。
+
+材料：《机器学习实战》
+作者：Peter Harrington
+资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb  
+学习笔记：还没开始看  
+网上评价比较好，很多人推荐  
+
+## 初级
+
+材料：scikit-learn的官方文档
+资源链接：http://sklearn.apachecn.org/cn/0.19.0/
+学习笔记：还没开始看
+网上推荐的。“有理论有实战，最好的库学习资源，没有之一。”
+
+pandas
+
+## 中级
+
+材料：《hands-on-ml-with-sklearn-and-tf》
+资源链接：https://pan.baidu.com/s/1x318qTHGt9oZKQwHkoUvKA 密码：xssj
+学习笔记：还没开始看
+网上推荐的。“不仅能学习到库的应用，还能深入了解工业界的流程解决方案，最好的实战教学书，没有之一。”
