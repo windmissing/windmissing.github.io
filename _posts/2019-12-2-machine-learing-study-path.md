@@ -12,8 +12,10 @@ tags: []
 材料：《深度学习》 第一部分 应用数学与机器学习基础  
 作者：深度学习的三大开山鼻祖之一Yoshua Bengio  
 资源链接：https://pan.baidu.com/s/1GmmbqFewyCuEA7blXNC-7g 密码：6qqm  
-学习笔记：https://windmising.gitbook.io/mathematics-basic-for-ml/
+学习笔记：https://windmising.gitbook.io/mathematics-basic-for-ml/  
 只需要看《深度学习》 第一部分，总结了机器学习需要的常用的数学基本概念和公式。不涉及推导细节，可直接记住结论。  
+
+<!-- more -->
 
 ## 初级
 
@@ -40,11 +42,11 @@ tags: []
 在讲原理有少量的数学推导，数学基础不好也能看懂。  
 简单的算法配有python3实现，复杂算法使用slearn观察算法效果，对算法有直观印象。  
 
-材料：《机器学习实战》
-作者：Peter Harrington
-资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb  
-学习笔记：还没开始看  
-网上评价比较好，很多人推荐  
+材料：《机器学习实战》  
+作者：Peter Harrington  
+资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb   
+学习笔记：还没开始看   
+网上评价比较好，很多人推荐    
 
 ## 初级
 
@@ -73,7 +75,9 @@ tags: []
 
 ## 入门
 
-python、numpy
+python：https://www.runoob.com/python/python-tutorial.html
+numpy：https://www.runoob.com/numpy/numpy-tutorial.html
+笔记：https://nbviewer.jupyter.org/github/windmissing/programming_basics_for_ML/tree/master/
 
 材料：《python3入门机器学习 经典算法与应用》  
 作者：刘宇波   
