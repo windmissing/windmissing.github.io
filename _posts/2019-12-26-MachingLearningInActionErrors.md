@@ -27,3 +27,8 @@ L2:`regEx = re.compile('\\W*')` -> `regEx = re.compile('\\W+')`
 
 4.6.2 Listing 4.5  
 L13:`wordList = textParse(open('email/ham/%d.txt' % i, encoding='ISO-8859-15').read())`->`wordList = textParse(open('email/ham/%d.txt' % i).read())`
+
+4.7.1 第一段代码  
+在cmd下，将路径切换到python安装路径的scripts文件下，例如：C:\Users\xxx\AppData\Local\Continuum\anaconda3\Scripts，（很关键）通过pip install feedparser进行安装  
+这个方法亲测不成功
+
