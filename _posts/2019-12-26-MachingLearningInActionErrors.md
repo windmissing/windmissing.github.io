@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "机器学习实战代码勘误"
+category: 
+tags: []
+---
+
+2.2.1第二段代码  
+L2：`datingDataMat,datingLabels = kNN.file2matrix('datingTestSet.txt')` -> `datingDataMat,datingLabels = kNN.file2matrix('datingTestSet.txt')`
+
+2.2.5 Listing 2.5
+L5:`ffMiles = float(raw_input("frequent flier miles earned per year?"))` -> `ffMiles = float(input("frequent flier miles earned per year?"))`  
+L6、L7同上  
+
+<!-- more -->
+
+3.2.2 Listing 3.6  
+L3: `firstStr = myTree.keys()[0]` -> `firstStr = myTree.keys()[0]`  
+L13: `firstStr = myTree.keys()[0]` -> `firstStr = myTree.keys()[0]`  
+
+3.3.2 Listing 3.9  
+L4: `fw = open(filename,'w')`->`fw = open(filename,'wb')`  
+L10: `fr = open(filename)`->`fr = open(filename, 'rb)`  
+
+4.6.1第二段代码  
+L2:`regEx = re.compile('\\W*')` -> `regEx = re.compile('\\W+')`
+
+4.6.2 Listing 4.5  
+L13:`wordList = textParse(open('email/ham/%d.txt' % i, encoding='ISO-8859-15').read())`->`wordList = textParse(open('email/ham/%d.txt' % i).read())`

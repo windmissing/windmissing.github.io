@@ -45,8 +45,10 @@ tags: []
 材料：《机器学习实战》  
 作者：Peter Harrington  
 资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb   
-学习笔记：还没开始看   
-网上评价比较好，很多人推荐    
+学习笔记：刚开始看   
+网上很多人推荐，对算法的介绍比较基础，且配有代码实现，和《python3入门机器学习 经典算法与应用》相似  
+目前只看到第二章，感觉质量低于我的预期。  理论描述废话很多，我不得不从大段的废话中找到一点干货。而真正的干货却没有充分的展开。只介绍了算法过程，而缺少对算法更高层次的解读，不如《python3入门机器学习 经典算法与应用》那样有启发性。  
+代码部分也写得啰嗦，不够简洁优雅。  
 
 ## 初级
 
@@ -75,9 +77,9 @@ tags: []
 
 ## 入门
 
-python：https://www.runoob.com/python/python-tutorial.html
-numpy：https://www.runoob.com/numpy/numpy-tutorial.html
-笔记：https://nbviewer.jupyter.org/github/windmissing/programming_basics_for_ML/tree/master/
+python：https://www.runoob.com/python/python-tutorial.html  
+numpy：https://www.runoob.com/numpy/numpy-tutorial.html  
+笔记：https://programmingbasicsforml.netlify.com/readme.html
 
 材料：《python3入门机器学习 经典算法与应用》  
 作者：刘宇波   
