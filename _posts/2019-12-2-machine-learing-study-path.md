@@ -5,15 +5,45 @@ category:
 tags: []
 ---
 
-# 数学
+# 入门
 
-## 入门
+## 数学
 
 材料：《深度学习》 第一部分 应用数学与机器学习基础  
 作者：深度学习的三大开山鼻祖之一Yoshua Bengio  
 资源链接：https://pan.baidu.com/s/1GmmbqFewyCuEA7blXNC-7g 密码：6qqm  
 学习笔记：https://windmising.gitbook.io/mathematics-basic-for-ml/  
-只需要看《深度学习》 第一部分，总结了机器学习需要的常用的数学基本概念和公式。不涉及推导细节，可直接记住结论。  
+如果学过大学数学的课程（高数、现代、概率论），这个阶段不需要专门地学习数学，只需要把这知识回顾一下。  
+《深度学习》 第一部分，总结了机器学习需要的常用的数学基本概念和公式。不涉及推导细节，可直接记住结论。  
+在学习基础学习的算法中，对掌握不太好的基础知识查漏补缺即可。  
+
+## 算法
+
+材料：《python3入门机器学习 经典算法与应用》   
+作者：刘宇波    
+资源链接：https://coding.imooc.com/class/169.html   
+学习笔记：https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning   
+对常见机器学习算法做了基础的介绍。既有原理也有编程实践。还有一些对算法的思考。  
+在讲原理有少量的数学推导，数学基础不好也能看懂。  
+简单的算法配有python3实现，复杂算法使用slearn观察算法效果，对算法有直观印象。  
+机器学习入门必备。  
+
+## 实践
+
+材料：编译基础语法查询  
+python：https://www.runoob.com/python/python-tutorial.html  
+numpy：https://www.runoob.com/numpy/numpy-tutorial.html  
+笔记：https://programmingbasicsforml.netlify.com/readme.html  
+
+材料：《机器学习实战》  
+作者：Peter Harrington  
+资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb   
+学习笔记：https://github.com/windmissing/MachineLearningInAction   
+网上很多人推荐，因为对算法的介绍比较基础，且配有代码实现。实际感觉质量低于我的预期。   
+理论描述废话很多，我不得不从大段的废话中找到一点干货。而真正的干货却没有充分的展开。只介绍了算法过程，而缺少对算法更高层次的解读，不如《python3入门机器学习 经典算法与应用》那样有启发性。  
+代码部分也写得啰嗦，不够简洁优雅。代码的解释虽然很详细，但只是解释了代码在做什么，却没有解释为什么要这样做。  
+总之，这本书虽然简单，但并不适合完全没有算法基础的人当作入门书籍。适合有算法有一定了解（看过《python3入门机器学习 经典算法与应用》）但编程功底比较弱的人拿来对照练习写代码。  
+虽然对这本书满满的吐槽，但目前没有找到比较合适的替代品。    
 
 <!-- more -->
 
@@ -32,23 +62,6 @@ tags: []
 
 # 算法
 
-## 入门
-
-材料：《python3入门机器学习 经典算法与应用》   
-作者：刘宇波    
-资源链接：https://coding.imooc.com/class/169.html   
-学习笔记：https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning   
-对常见机器学习算法做了基础的介绍。既有原理也有编程实践。还有一些对算法的思考。  
-在讲原理有少量的数学推导，数学基础不好也能看懂。  
-简单的算法配有python3实现，复杂算法使用slearn观察算法效果，对算法有直观印象。  
-
-材料：《机器学习实战》  
-作者：Peter Harrington  
-资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb   
-学习笔记：刚开始看   
-网上很多人推荐，对算法的介绍比较基础，且配有代码实现，和《python3入门机器学习 经典算法与应用》相似  
-目前只看到第二章，感觉质量低于我的预期。  理论描述废话很多，我不得不从大段的废话中找到一点干货。而真正的干货却没有充分的展开。只介绍了算法过程，而缺少对算法更高层次的解读，不如《python3入门机器学习 经典算法与应用》那样有启发性。  
-代码部分也写得啰嗦，不够简洁优雅。  
 
 ## 初级
 
@@ -74,25 +87,6 @@ tags: []
 非常理论，不涉及实践。对数学要求较高。
 
 # 实践
-
-## 入门
-
-python：https://www.runoob.com/python/python-tutorial.html  
-numpy：https://www.runoob.com/numpy/numpy-tutorial.html  
-笔记：https://programmingbasicsforml.netlify.com/readme.html
-
-材料：《python3入门机器学习 经典算法与应用》  
-作者：刘宇波   
-资源链接：https://coding.imooc.com/class/169.html  
-学习笔记：https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning  
-简单的算法配有python3实现，复杂算法使用slearn观察算法效果。
-用于熟悉python, numpy, sklearn。
-
-材料：《机器学习实战》
-作者：Peter Harrington
-资源链接：链接：https://pan.baidu.com/s/15XtFOH18si316076GLKYfg 密码：sawb  
-学习笔记：还没开始看  
-网上评价比较好，很多人推荐  
 
 ## 初级
 
