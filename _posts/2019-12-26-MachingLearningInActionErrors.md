@@ -32,6 +32,9 @@ L13:`wordList = textParse(open('email/ham/%d.txt' % i, encoding='ISO-8859-15').r
 在cmd下，将路径切换到python安装路径的scripts文件下，例如：C:\Users\xxx\anaconda3\Scripts，（很关键）通过pip install feedparser进行安装   
 这个方法亲测不成功，feedParser下不下来   
 
+6.2.1 公式2  
+公式中的ahpha和a可以看作是同一个符号
+
 6.2.1 公式4、公式5  
 `i-1` -> `i=1`
 
