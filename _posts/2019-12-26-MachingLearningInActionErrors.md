@@ -38,3 +38,6 @@ L13:`wordList = textParse(open('email/ham/%d.txt' % i, encoding='ISO-8859-15').r
 6.2.1 公式4、公式5  
 `i-1` -> `i=1`
 
+8.2 公式2
+分子少了一个平方符号
+
