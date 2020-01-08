@@ -41,3 +41,8 @@ L13:`wordList = textParse(open('email/ham/%d.txt' % i, encoding='ISO-8859-15').r
 8.2 公式2
 分子少了一个平方符号
 
+9.4.1 代码1  
+`regTrees.createTree(myMat,ops=(0,1))` -> `regTrees.createTree(myMat,ops=(1,0))`
+
+9.4.3 代码3  
+`regTrees.createTree(myMat2,ops=(10000,4))` -> `regTrees.createTree(myMat2,ops=(4, 10000))`
