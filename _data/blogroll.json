@@ -14,5 +14,13 @@
     {
         "title": "《机器学习实战》学习笔记",
         "url":"https://github.com/windmissing/MachineLearningInAction"
+    },
+    {
+        "title": "机器学习数学基础",
+        "url":"https://windmising.gitbook.io/mathematics-basic-for-ml/"
+    },
+    {
+        "title": "机器学习编程基础",
+        "url":"https://programmingbasicsforml.netlify.com/readme.html"
     }
 ]
