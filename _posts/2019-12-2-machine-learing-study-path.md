@@ -31,7 +31,7 @@ tags: []
 ## 实践
 
 材料：编译基础语法查询  
-python：https://www.runoob.com/python/python-tutorial.html  
+python：https://www.runoob.com/python3/python3-tutorial.html  
 numpy：https://www.runoob.com/numpy/numpy-tutorial.html  
 笔记：https://programmingbasicsforml.netlify.com/readme.html  
 
