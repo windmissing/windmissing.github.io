@@ -44,3 +44,6 @@ L13:`wordList = textParse(open('email/ham/%d.txt' % i, encoding='ISO-8859-15').r
 9.2 Listing9.1  
 L13: `mat0 = dataSet[nonzero(dataSet[:,feature] > value)[0],:][0]` -> `mat0 = dataSet[nonzero(dataSet[:, feature] <= value)[0], :]`  
 L14同上
+
+13.2.2 Listing 13.1  
+L6：`datArr = [map(float,line) for line in stringArr]` -> `datArr = [list(map(float,line)) for line in stringArr]`
