@@ -1,6 +1,6 @@
 layout: post
 title:  "ML advice - Debugging Learning Algorithms"
-category: [吴恩达系列]
+category: [Machine Learning]
 tags: []
 
 **Q1：使用Bayesian算法做逻辑回归问题，test error过高怎么办？**

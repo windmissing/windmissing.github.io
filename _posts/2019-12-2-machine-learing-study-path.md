@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Machine Learning自学路线"
-category: 
+category: [Machine Learning]
 tags: []
 ---
 
@@ -16,6 +16,8 @@ tags: []
 如果学过大学数学的课程（高数、现代、概率论），这个阶段不需要专门地学习数学，只需要把这知识回顾一下。  
 《深度学习》 第一部分，总结了机器学习需要的常用的数学基本概念和公式。不涉及推导细节，可直接记住结论。  
 在学习基础学习的算法中，对掌握不太好的基础知识查漏补缺即可。  
+
+<!-- more -->
 
 ## 算法
 
@@ -44,8 +46,6 @@ numpy：https://www.runoob.com/numpy/numpy-tutorial.html
 这本书做为多年来的经典入门书籍，也有他独特的优势。对于广大把编程语言用得比母语还溜的码农来说，通过语言文字来学习算法远不如通过代码学习来得直观。而这本书把十多种经典的机器学习算法用代码实现了一遍，而且对代码解释的详细到几乎是逐行解释了。在这方面目前还没有发现其它资料可以替代。因此，虽然满满的吐槽，还是很认真的把这本书从头到尾看了一遍。
 总之，这本书虽然简单，但并不适合完全没有算法基础的人当作入门书籍。适合有算法有一定了解（看过《python3入门机器学习 经典算法与应用》）但编程功底比较弱的人拿来对照练习写代码。或者有编程基础的人通过代码的方式来学习算法。    
 
-<!-- more -->
-
 # 初级
 
 ## 数学
@@ -57,41 +57,19 @@ numpy：https://www.runoob.com/numpy/numpy-tutorial.html
 
 《现性代数》推荐：Strang
 
-## 中级
-
-材料：《CS229》配套的数学部分  
-作者：吴恩达  
-资源链接：https://pan.baidu.com/s/1NrCAW38C9lXFqPwqTlrVRA 密码：3k3m
-学习笔记：还没完全看懂  
-是对CS229课程的数学补充。将数学知识综合应用到机器学习算法中。经常一个公式里同时包含高数、现代、概率论。对数学要求比较高。
-
-# 算法
-
-
-## 初级
+## 算法
 
 材料：《统计学习方法》  
 作者：李航  
 资源链接：https://pan.baidu.com/s/1Mk_O71k-H8GHeaivWbzM-Q 密码：adep
-学习笔记：还没开始看  
-西瓜书，网上评价比较好，很多人推荐 
+学习笔记：https://windmising.gitbook.io/lihang-tongjixuexifangfa/  
+网上评价比较好，很多人推荐 
 
 材料：《机器学习》
 作者：周志华  
 资源链接：https://pan.baidu.com/s/1lJoQnWToonvBU6cYwjrRKg 密码：7rzl
 学习笔记：还没开始看  
-西瓜书，网上评价比较好，很多人推荐 
-
-## 中级
-
-材料：《CS229》
-作者：吴恩达  
-资源链接：https://pan.baidu.com/s/1MC_yWjcz_m5YoZFNBcsRSQ 密码：6rw6
-学习笔记：还没完全看懂
-与入门的算法介绍不同，这里不再详细说明算法的过程和作用，而是重点在算法的推导过程和背后的原理。  
-非常理论，不涉及实践。对数学要求较高。
-
-# 实践
+西瓜书，网上评价比较好，很多人推荐。书上有些公式推导不是很细，需要有一定数学基础。 
 
 ## 初级
 
@@ -102,7 +80,26 @@ numpy：https://www.runoob.com/numpy/numpy-tutorial.html
 
 pandas
 
-## 中级
+# 中级
+
+## 数学
+
+材料：《CS229》配套的数学部分  
+作者：吴恩达  
+资源链接：https://pan.baidu.com/s/1NrCAW38C9lXFqPwqTlrVRA 密码：3k3m
+学习笔记：还没完全看懂  
+是对CS229课程的数学补充。将数学知识综合应用到机器学习算法中。经常一个公式里同时包含高数、现代、概率论。对数学要求比较高。
+
+## 算法
+
+材料：《CS229》
+作者：吴恩达  
+资源链接：https://pan.baidu.com/s/1MC_yWjcz_m5YoZFNBcsRSQ 密码：6rw6
+学习笔记：还没完全看懂
+与入门的算法介绍不同，这里不再详细说明算法的过程和作用，而是重点在算法的推导过程和背后的原理。  
+非常理论，不涉及实践。对数学要求较高。
+
+## 实践
 
 材料：《hands-on-ml-with-sklearn-and-tf》
 资源链接：https://pan.baidu.com/s/1x318qTHGt9oZKQwHkoUvKA 密码：xssj

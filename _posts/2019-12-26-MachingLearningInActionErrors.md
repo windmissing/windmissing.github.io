@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "机器学习实战代码勘误"
-category: 
+category: [Machine Learning]
 tags: []
 ---
 
