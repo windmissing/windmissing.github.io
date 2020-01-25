@@ -15,7 +15,7 @@ tags: []
 | 分类算法/回归算法 | 多分类 |
 |对数据的假设 | 无 |
 |参数学习/非参数学习 | 非参数学习 |
-| 链接 | https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning/di-si-zhangkjin-lin-suan-fa<br>https://github.com/windmissing/MachineLearningInAction/tree/master/Chapter2|
+| 链接 | https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning/di-si-zhangkjin-lin-suan-fa<br>https://github.com/windmissing/MachineLearningInAction/tree/master/Chapter2<br>https://windmising.gitbook.io/lihang-tongjixuexifangfa/knn|
 
 <!-- more -->
 
@@ -55,9 +55,9 @@ tags: []
 ---|---
 |算法名| 感知机学习算法 |
 | 分类算法/回归算法 | 二分类算法 |
-|对数据的假设 | 无数学理论支持 |
+|对数据的假设 | X和y是线性关系 |
 |参数学习/非参数学习 | 参数学习 |
-| 链接 | cs229
+| 链接 | https://windmising.gitbook.io/lihang-tongjixuexifangfa/perceptron
 
 ## softmat回归
 
@@ -85,7 +85,7 @@ tags: []
 ---|---
 |算法名| 朴素贝叶斯 |
 | 分类算法/回归算法 | 二分类 |
-|对数据的假设 | 无，基于贝叶斯公式 |
+|对数据的假设 | 条件独立性假设，基于贝叶斯公式 |
 |参数学习/非参数学习 | 参数学习 |
 | 链接 | https://github.com/windmissing/MachineLearningInAction/tree/master/Chapter4
 
