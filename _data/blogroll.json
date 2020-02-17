@@ -4,27 +4,11 @@
         "url": "http://blog.csdn.net/mishifangxiangdefeng"
     },
     {
-        "title": "《算法导论》学习笔记",
-        "url": "https://windmising.gitbook.io/introduction-to-algorithms/"
+        "title":"李宏毅教授的个人主页",
+        "url":"http://speech.ee.ntu.edu.tw/~tlkagk/index.html"
     },
     {
-        "title": "《python3入门机器学习 经典算法与应用》学习笔记",
-        "url": "https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning/"
-    },
-    {
-        "title": "《机器学习实战》学习笔记",
-        "url":"https://github.com/windmissing/MachineLearningInAction"
-    },
-    {
-        "title": "机器学习数学基础",
-        "url":"https://windmising.gitbook.io/mathematics-basic-for-ml/"
-    },
-    {
-        "title": "机器学习编程基础",
-        "url":"https://programmingbasicsforml.netlify.com/readme.html"
-    },
-    {
-        "title": "《李航-统计学习方法》学习笔记",
-        "url":"https://windmising.gitbook.io/lihang-tongjixuexifangfa/"
+        "title":"Neural Networks and Deep Learning",
+        "url":"http://neuralnetworksanddeeplearning.com/index.html"
     }
 ]
