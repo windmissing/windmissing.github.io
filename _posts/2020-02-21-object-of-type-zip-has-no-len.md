@@ -19,6 +19,8 @@ n_test = len(test_data)
 object of type 'zip' has no len()
 ```
 
+<!-- more -->
+
 **原因：**  
 
 python2与python3的不同
