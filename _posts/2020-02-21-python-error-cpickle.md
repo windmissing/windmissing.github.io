@@ -18,6 +18,8 @@ import cPickle as pk
 ImportError: No module named 'cPickle'
 ```
 
+<!-- more -->
+
 **原因：**  
 
 python2有cPickle，但是在python3下，是没有cPickle的；

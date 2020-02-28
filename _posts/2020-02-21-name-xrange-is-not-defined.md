@@ -18,6 +18,8 @@ for j in xrange(epochs):
 NameError: name 'xrange' is not defined
 ```
 
+<!-- more -->
+
 **原因：**  
 
 在Python 3中，range()与xrange()合并为range( )。  

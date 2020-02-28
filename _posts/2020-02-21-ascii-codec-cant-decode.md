@@ -18,6 +18,8 @@ pickle.load(f)
 'ascii' codec can't decode byte 0x90 in position 614: ordinal not in range(128)
 ```
 
+<!-- more -->
+
 **原因：**  
 
 python编码问题
