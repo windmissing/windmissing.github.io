@@ -19,6 +19,8 @@ ML和DL的很多概念是相通的，有一定的ML基础对学习DL是有帮助
 资源链接：https://pan.baidu.com/s/1GmmbqFewyCuEA7blXNC-7g 密码：6qqm  
 学习笔记：https://windmising.gitbook.io/mathematics-basic-for-ml/  
 
+<!-- more -->
+
 ## DL入门
 
 材料：Neural Networks and Deep Learning  
