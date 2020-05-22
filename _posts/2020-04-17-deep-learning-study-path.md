@@ -54,7 +54,14 @@ https://www.bilibili.com/video/av9770302/?from=search&seid=9981051227372686627
 
 ## 实践
 
-材料：没有找到很好的材料。  
-pytorch：https://pytorch-cn.readthedocs.io/zh/latest/
-学习笔记：https://github.com/windmissing/DeepLearningPractise  
+材料：pytorch中文手册  
+link：https://pytorch-cn.readthedocs.io/zh/latest/
+
+材料：深度学习工程师  
+作者：Ag  
+链接：网易云课堂  
+适合有一定理论基础。
+
+编程笔记：https://windmissing.github.io/programming_basics_for_ML/  
+实践笔记：https://github.com/windmissing/DeepLearningPractise  
 我自己把《深度学习》中的一些算法用pytorch实现了一下，其实就是调库，看看效果。  
