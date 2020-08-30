@@ -21,6 +21,8 @@ $$
 F(\mu) = \frac{\alpha_2\mu^2}{1+\beta_2\mu^2}
 $$
 
+<!-- more -->
+
 ## Ghorbani模型
 
 AM-AM失真曲线：  
