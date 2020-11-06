@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "git使用技巧"
-category: [opensource]
+category: [tools]
 tags: [git]
 ---
 

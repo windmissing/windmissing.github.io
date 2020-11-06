@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "atom遇到的问题及解决方法"
-category: [opensource]
+category: [tools]
 tags: [atom]
 ---
 

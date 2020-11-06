@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "emacs常用快捷键"
-category: editor
+category: tools
 tags: [emacs, editor]
 ---
 

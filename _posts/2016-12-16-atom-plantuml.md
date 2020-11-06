@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "方便在博客中使用的UML画图工具"
-category: [opensource]
+category: [tools]
 tags: [atom, uml]
 ---
 

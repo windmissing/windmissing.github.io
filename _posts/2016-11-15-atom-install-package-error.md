@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "atom安装package遇到的问题"
-category: [opensource]
+category: [tools]
 tags: [atom]
 ---
 
