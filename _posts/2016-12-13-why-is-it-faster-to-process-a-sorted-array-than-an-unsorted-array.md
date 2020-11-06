@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "为什么有序数组的执行速度快于无序数组？"
-category: [stackoverflow经典问答]
+category: [编程语言]
 tags: [c++, JAVA, 性能, 分支预测]
 ---
 

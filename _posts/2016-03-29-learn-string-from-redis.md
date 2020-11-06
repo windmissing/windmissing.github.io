@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "redis的字符串"
-category: 从开源项目学设计
+category: opensource
 tags: [open source, redis, string]
 ---
 
