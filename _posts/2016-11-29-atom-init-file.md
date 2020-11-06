@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "atom init文件"
-category: [opensource]
+category: [tools]
 tags: [atom]
 ---
 
