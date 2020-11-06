@@ -2,7 +2,7 @@
 layout: post
 title: "本地搭建ELK系统"
 date:   2016-01-09 20:38:30 +0800
-category: opensource
+category: [opensource]
 tags: [linux, ELK]
 ---
 

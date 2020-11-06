@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "logstash grok解析"
-category: opensource
+category: [opensource]
 tags: [linux, ELK, grok]
 ---
 
