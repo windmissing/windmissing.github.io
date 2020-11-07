@@ -43,4 +43,16 @@
         "title":"ACM HDOJ刷题笔记",
         "url":"https://windmissing.github.io/ACM_HDOJ/"
     },
+    {
+        "title":"C++学习笔记",
+        "url":"https://windmissing.github.io/cpp_notes/"
+    },
+    {
+        "title":"通信技术笔记",
+        "url":""
+    },
+    {
+        "title":"linux内核学习笔记",
+        "url":""
+    }
 ]
