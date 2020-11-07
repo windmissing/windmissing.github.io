@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "flask入门 --- hello world"
-category: [back-end]
+category: [opensource]
 tags: [python, flask, web app server, linux]
 ---
 

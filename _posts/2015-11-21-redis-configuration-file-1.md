@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "redis配置文件样例(一)"
-category: linux
+category: opensource
 tags: [redis, cofiguration, 翻译]
 ---
 
