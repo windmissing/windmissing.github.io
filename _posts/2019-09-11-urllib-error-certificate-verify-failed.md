@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "间接调用虚函数"
+title:  "SSL: CERTIFICATE_VERIFY_FAILED"
 category: [编程语言]
 tags: [C++, 析构函数]
 ---

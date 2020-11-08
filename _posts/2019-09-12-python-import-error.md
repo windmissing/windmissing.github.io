@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "间接调用虚函数"
+title:  "python import error"
 category: [编程语言]
 tags: [python]
 ---
