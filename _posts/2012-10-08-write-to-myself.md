@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "10月7日梦"
-category: 
+category: [随便想想]
 tags: []
 ---
 
