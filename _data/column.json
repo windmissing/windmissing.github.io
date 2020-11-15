@@ -62,5 +62,9 @@
     {
         "title":"工具踩坑记录",
         "url":"https://windmissing.github.io/tools_notes/"
+    },
+    {
+        "title":"运行自己的操作系统",
+        "url":"https://windmissing.github.io/baby_os/"
     }
 ]
