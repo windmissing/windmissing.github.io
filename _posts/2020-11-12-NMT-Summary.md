@@ -30,8 +30,6 @@ transformer的改进：
 1. 新的attention function，使用scaled dot-product作为alignment score。  
 2. a multi-head attention modlule，使得NMT模型可以jointly attend to information from different representations at different positions。  
 
-<!-- more -->
-
 # 多语言NMT
 
 多语言NMT是指在一个模型中完成多对语言之间的翻译，具体可以分为一对多、多对一、多对多。  
@@ -130,3 +128,4 @@ NAT，Non-Autogressive Machine Translation
 基于部分源句做预测  
 policy: wait k policy  
 
+<!-- more -->
