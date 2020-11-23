@@ -23,14 +23,14 @@ Transformer摒弃了recurrent结构，这不代表在Transformer中每个时间�
 只使用Input Embedding来表示输入数据。  
 RNN结构本身包含了序列顺序信息。  
 Transformer没有recurrent，用Positional Encoding来表达序列顺序信息。  
-2. CNN
+2. CNN  
 [?] 论文提到了CNN，不知道Transformer跟CNN有什么关系？  
 
 ### 本文方法
 
 用Input Embedding + Positional Encoding的方法来表达带序列顺序信息的输入数据
 用Output Embedding + Positional Encoding的方法来表达带序列顺序信息的上一个时间步的输出数据   
-![](/images/2020/20.png)   
+![](/images/2020/23.png)   
 具体步骤：  
 1. 生成Positional Encoding  
 
@@ -50,7 +50,7 @@ $d_{model}$：PE Vector的长度，与Embedding的长度相同
 - [?] for any fixed offset k, PE(pos+k) can be represented as a linear function of PE(pos)。  
 - 推断序列可以长于训练序列  
 
-除了本文所用的sinusoidal PE，还有其它PE计算方式，例如本文的参考文献[9]。  
+除了本文所用的sinusoidal PE，还有其它PE计算方式，例如learned positional attention[9]。  
 从本文实验上看，两种PE算法的性能差不多，选择sinusoidal PE是因为它的第三个特点。  
 
 2. 把Positional Encoding与Input Embedding结合  
@@ -97,8 +97,8 @@ $$
 
 Multi-Head Attention  
 将问题、键、值分别生成几组不同d_k和d_v的矩阵。  
-每组用上面的scaled dot-product attention生成一（n_q）个输出向量。  
-同一个问题对应的所有组输出向量concat到一起，得到一（n_q）个长的向量。  
+每组用上面的scaled dot-product attention生成一个或（n_q）个输出向量。  
+同一个问题对应的所有组输出向量concat到一起，得到一个或（n_q）个长的向量。  
 
 ### 比较
 
@@ -134,10 +134,17 @@ Multi-Head Attention
 
 attention  
 self-attention  
-dditive attention  
 dot-product attention  
 Multi-Head Attention  
-residual connection  
-layer normalization
+residual connection[11]  
+layer normalization[1]
 Softmax  
 encoding  
+
+# 其它提到的技术  
+
+factorization tricks[21]  
+conditional computation[32]  
+additive attention[2]  
+learned positional attention[9]
+<!-- more -->
