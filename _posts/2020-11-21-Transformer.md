@@ -5,13 +5,10 @@ category: [Machine Learning]
 tags: []
 ---
 
-Transformer用Attention代替了传统序列转换问题模型中的**recurrent**结构。  
+Transformer是一种不同于CNN或RNN的新的网络结构。在Transformer之前，序列模型或序列转换问题普遍都是用基于gate和recurrent的网络结构。
 所谓的**recurrent**结构是指存在从当前时间步的hidden state流向下一个时间步的hidden state的数据流动。  
-Transformer摒弃了recurrent结构，这不代表在Transformer中每个时间步之间没有关系。实际上在Transformer中，还是存在从当前时间步到下一个时间步的数据流动。下一个时间步使用了当时步的输出。  
-
-![](/images/2020/20.png)  
-
-存在图上红线的路径才叫recurrent结构。Transformer中不存在红线路径，但仍存在绿线路径。  
+这种方法存在“并行性差”、“对齐”、“长距离难以学习”等问题。   
+解决“并行性差”的方法有：Extended Neural GPU[16]、ByteNet[18]、ConvS2S[9]，但这些方法让长距离问题更严重。  
 
 # Transformer的主要创新点   
 
@@ -36,13 +33,13 @@ Transformer没有recurrent，用Positional Encoding来表达序列顺序信息�
 
 $$
 \begin{aligned}
-    PE(pos, 2i) = \sin\left(\frac{pos}{10000^{\frac{2i}{d_{model}}}}\right)   \\
-    PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{\frac{2i}{d_{model}}}}\right)
+    PE(pos, i) = \sin\left(\frac{pos}{10000^{\frac{i}{d_{model}}}}\right)   &&   i \text{ is even}\\
+    PE(pos, i) = \cos\left(\frac{pos}{10000^{\frac{i-1}{d_{model}}}}\right)   &&   i \text{ is odd}
 \end{aligned}
 $$
 
 pos：代表序列中的第几个时间步  
-i：代表某个时间步的Encoding Vector中的第几个值  
+i：代表某个时间步的Encoding Vector中的第几个值，i的最大值为PE的维度，也就是Input Embedding的维度。    
 $d_{model}$：PE Vector的长度，与Embedding的长度相同   
 
 以上是本文使用的PE计算方法，称为sinusoidal PE，具有以下特点：  
@@ -58,6 +55,14 @@ $d_{model}$：PE Vector的长度，与Embedding的长度相同
 
 
 ### 比较
+
+Transformer用Attention代替了传统序列转换问题模型中的**recurrent**结构。  
+Transformer摒弃了recurrent结构，这不代表在Transformer中每个时间步之间没有关系。实际上在Transformer中，还是存在从当前时间步到下一个时间步的数据流动。下一个时间步使用了当时步的输出。  
+
+![](/images/2020/20.png)  
+
+存在图上红线的路径才叫recurrent结构。Transformer中不存在红线路径，但仍存在绿线路径。  
+[?] 我还是不知道怎么用Attention代替recurrent的。我看到的attention是用在同一个时间步的，没有看不同时间步之间有attention。  
 
 ## 改进的注意力机制 Multi-Head Attention
 
@@ -134,17 +139,19 @@ Multi-Head Attention
 
 attention  
 self-attention  
-dot-product attention  
-Multi-Head Attention  
 residual connection[11]  
 layer normalization[1]
 Softmax  
-encoding  
+embedding  
 
 # 其它提到的技术  
 
 factorization tricks[21]  
 conditional computation[32]  
 additive attention[2]  
-learned positional attention[9]
+learned positional attention[9]  
+Extended Neural GPU[16]  
+ByteNet[18]  
+ConvS2S[9]
+
 <!-- more -->
