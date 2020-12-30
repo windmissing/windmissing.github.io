@@ -18,3 +18,17 @@ layout: default
     {% endif %}
   </ul>
 </div>
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'windmissing',
+    repo: 'windmissing.github.io',
+    oauth: {
+        client_id: '194e7c91f8c7b152926a',
+        client_secret: 'eb50df1bd52e02859b7ba3da696d60eba20f798a',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
