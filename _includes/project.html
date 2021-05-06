@@ -3,7 +3,7 @@
 <h3 class="title">Projects</h3>
 <ul>
   {% for list in site.data.project %}
-  <li>{{ list.intro }}</li>
+  <li><a href="{{ list.url }}" title="{{ list.title }}">{{ list.title }}</a></li>
   {% endfor %}
 </ul>
 </section>

@@ -6,7 +6,9 @@ layout: page
 <ul>
   {% for list in site.data.project %}
   <h4 id="{{ list.title | cgi_escape }}"><a href="{{ list.url }}" title="{{ list.title }}">{{ list.title }}</a></h4>
-  {{ list.intro }}
+      {% for item in site.data.intro %}
+          <li>{{ item }}</li>
+      {% endfor %}
   {% endfor %}
 </ul>
 
