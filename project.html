@@ -1,0 +1,11 @@
+{% if site.data.blogroll %}
+<section>
+<h3 class="title">Columns</h3>
+<ul>
+  {% for list in site.data.project %}
+  <h3 class="title">{{ list.title }}</h3>
+  <li><a href="{{ list.url }}" title="{{ list.title }}">{{ list.title }}</a></li>
+  {% endfor %}
+</ul>
+</section>
+{% endif %}

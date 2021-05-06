@@ -1,15 +1,15 @@
 [
     {
+        "title":"花书《Deep Learning》学习笔记",
+        "url":"https://windmissing.github.io/Bible-DeepLearning/"
+    },
+    {
         "title": "《算法导论》学习笔记",
         "url": "https://windmising.gitbook.io/introduction-to-algorithms/"
     },
     {
         "title": "《python3入门机器学习 经典算法与应用》学习笔记",
         "url": "https://windmising.gitbook.io/liu-yu-bo-play-with-machine-learning/"
-    },
-    {
-        "title": "《机器学习实战》学习笔记",
-        "url":"https://github.com/windmissing/MachineLearningInAction"
     },
     {
         "title": "机器学习数学基础",
@@ -26,10 +26,6 @@
     {
         "title":"《Neural Networks and Deep Learning》学习笔记",
         "url":"https://windmising.gitbook.io/nielsen-nndl/"
-    },
-    {
-        "title":"花书《Deep Learning》学习笔记",
-        "url":"https://windmissing.github.io/Bible-DeepLearning/"
     },
     {
         "title":"《Deep Learning》Practise",
