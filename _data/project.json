@@ -1,6 +1,7 @@
 [
     {
         "title": "ML常见算法实现",
-        "url":"https://github.com/windmissing/MachineLearningInAction"
+        "url":"https://github.com/windmissing/MachineLearningInAction",
+        "intro":"intro"
     }
 ]
