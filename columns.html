@@ -5,6 +5,9 @@ layout: page
 
 <ul>
   {% for list in site.data.column %}
-  <li><a href="{{ list.url }}" title="{{ list.title }}">{{ list.title }}</a></li>
+  <h4 id="{{ list.title | cgi_escape }}"><a href="{{ list.url }}" title="{{ list.title }}">{{ list.title }}</a></h4>
+      {% for item in list.intro %}
+          <li>{{ item }}</li>
+      {% endfor %}
   {% endfor %}
 </ul>

@@ -3,7 +3,10 @@
         "title": "ML常见算法实现",
         "url":"https://github.com/windmissing/MachineLearningInAction",
         "intro":["以Peter Harrington的《机器学习实战》为基础，对其中的代码做了提炼、重构、优化，结果对读者更友好。",
-                 "目前包含的算法有：KNN、决策树、 朴素贝叶斯、逻辑回归、SVM",
+                 "目前包含的算法有：",
+                 "分类问题：KNN、决策树、 朴素贝叶斯、逻辑回归、SVM、adaboost",  
+                 "回归问题：Regression、回归树",
+                 "非监督学习：KMeans、Apriori、FpGrowth、PCA、SVDRec",
                  "适合广大把编程语言用得比母语还溜的码农，通过语言文字学习算法远不如通过代码学习来得直观。",
                  "适合对算法有一定了解但编程功底比较弱的同学拿来对照练习写编程。"]
     }
