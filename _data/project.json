@@ -8,7 +8,9 @@
                  "回归问题：Regression、回归树",
                  "非监督学习：KMeans、Apriori、FpGrowth、PCA、SVDRec",
                  "适合广大把编程语言用得比母语还溜的码农，通过语言文字学习算法远不如通过代码学习来得直观。",
-                 "适合对算法有一定了解但编程功底比较弱的同学拿来对照练习写编程。"],
+                 "适合对算法有一定了解但编程功底比较弱的同学拿来对照练习写编程。"]
+    },
+    {
         "title":"《算法导论》第二版课后习题代码实现",
         "utr":"https://github.com/windmissing/exerciseForAlgorithmSecond",
         "intro":["《算法导论》第二版大部分课后习题的代码实现以及UT"]
