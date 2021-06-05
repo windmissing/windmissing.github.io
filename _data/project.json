@@ -14,5 +14,10 @@
         "title":"《算法导论》第二版课后习题代码实现",
         "url":"https://github.com/windmissing/exerciseForAlgorithmSecond",
         "intro":["《算法导论》第二版大部分课后习题的代码实现以及UT"]
+    },
+    {
+        "title":"刷题",
+        "url":"https://github.com/windmissing/ACM_HDOJ",
+        "intro":["HDOJ、leetcode等刷题代码"]
     }
 ]
