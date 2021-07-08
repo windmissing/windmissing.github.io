@@ -45,6 +45,7 @@ http://www.cnblogs.com/wanghonggang/archive/2013/03/13/CppUTest_in_Visual_Studio
 函数要短小  
 
 #### 五、注释
+
 不要写注释，因为修改代码时一般不会同步修改注释  
 要写注释是因为代码的表达能力不够，这时应该考虑如何让代码的表达力更好  
 以下三种情况可以写注释：  

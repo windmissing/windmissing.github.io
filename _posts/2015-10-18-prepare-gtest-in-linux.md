@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "在linux上搭建gtest"
-category: linux
+category: [dojo]
 tags: [gtest, UT]
 ---
 
