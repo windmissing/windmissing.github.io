@@ -51,12 +51,16 @@
     {
         "title":"NLP论文阅读笔记",
         "url":"https://windmissing.github.io/NLP-important-papers/",
-        "intro":[]
+        "intro":[
+]
     },
     {
         "title":"C++学习笔记",
         "url":"https://windmissing.github.io/cpp_notes/",
-        "intro":[]
+        "intro":["这本电子书收录了笔者平时学习C++时做的笔记，涉及以下内容：",
+                 "C++98、C++11/14语法",
+                 "编译与链接",
+                 "GTEST"]
     },
     {
         "title":"通信技术笔记",

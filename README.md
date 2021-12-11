@@ -1,3 +1,5 @@
+主页: http://windmissing.github.io/
+
 #### Create new post
 
     rake post title='A Title'
