@@ -29,6 +29,24 @@
         "intro":[]
     },
     {
+        "title":"GAMES101",
+        "url":"https://caterpillarstudygroup.github.io/GAMES101_mdbook/",
+        "intro":["这是GAMES101的学习笔记",
+                 "GAMES101是GAMES-Webinar提供的一个课程系列，上课老师是闫令琪。",
+                 "作者闫令琪大佬在内容上非常专业。课程逻辑清晰有条理。尤其是光栅化和光线追踪这两个话题，能够把复杂的内容讲得深入浅出。",
+                 "大佬在讲课方面也很专业。每节课都有上集回顾、本集预告，课程以大约半小时为一个段落，按照易-难-答疑编排。",
+                 "总之，听大佬上课，不仅能学到知识，更是一种享受。"]
+    },
+    {
+        "title":"liuyubo机器学习入门",
+        "url":"https://caterpillarstudygroup.github.io/LiuYuBo_ML_pages/",
+        "intro":["这是liuyubo老师的《python3入门机器学习》的笔记",
+                 "这门课程对常见机器学习算法做了基础的介绍。既有原理也有编程实践。还有一些对算法的思考。",
+                 "在讲原理有少量的数学推导，数学基础不好也能看懂。",
+                 "简单的算法配有python3实现，复杂算法使用slearn观察算法效果，对算法有直观印象。",
+                 "机器学习入门必备。"]
+    },
+    {
         "title": "《李航-统计学习方法》学习笔记",
         "url":"https://windmissing.github.io/LiHang-TongJiXueXiFangFa/",
         "intro":[]
